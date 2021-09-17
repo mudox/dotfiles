@@ -1,0 +1,126 @@
+wtf:
+  colors:
+    border:
+      focusable: darkslateblue
+      focused: orange
+      normal: gray
+  refreshInterval: 10
+  exitMessage:
+    display: false
+  mods:
+    dotfiles:  
+      type: git
+      enabled: true
+      title: Dotfiles
+      commitCount: 3
+      # commitFormat: "[forestgreen]%h [grey]%cd [white]%s [grey]%an[white]"
+      dateFormat: "%H:%M %d %b %y"
+      refreshInterval: 8
+      repositories:
+        - "/Users/mudox/Git/dotfiles"  
+      position:
+        left: 0
+        top: 0
+        height: 1
+        width: 1
+
+    neovim-config:  
+      type: git
+      enabled: true
+      title: Neovim
+      commitCount: 3
+      # commitFormat: "[forestgreen]%h [grey]%cd [white]%s [grey]%an[white]"
+      dateFormat: "%H:%M %d %b %y"
+      refreshInterval: 8
+      repositories:
+        - "/Users/mudox/Git/neovim-config"  
+      position:
+        left: 1
+        top: 0
+        height: 1
+        width: 1
+
+    tmux-config:  
+      type: git
+      enabled: true
+      title: Tmux
+      commitCount: 3
+      # commitFormat: "[forestgreen]%h [grey]%cd [white]%s [grey]%an[white]"
+      dateFormat: "%H:%M %d %b %y"
+      refreshInterval: 8
+      repositories:
+        - "/Users/mudox/Git/tmux-config"  
+      position:
+        left: 2
+        top: 0
+        height: 1
+        width: 1
+
+    hs-config:  
+      type: git
+      enabled: true
+      title: Hammerspoon
+      commitCount: 3
+      # commitFormat: "[forestgreen]%h [grey]%cd [white]%s [grey]%an[white]"
+      dateFormat: "%H:%M %d %b %y"
+      refreshInterval: 8
+      repositories:
+        - "/Users/mudox/Git/hs-config"  
+      position:
+        left: 3
+        top: 0
+        height: 1
+        width: 1
+
+
+    tav:  
+      type: git
+      enabled: true
+      title: Tav
+      commitCount: 3
+      # commitFormat: "[forestgreen]%h [grey]%cd [white]%s [grey]%an[white]"
+      dateFormat: "%H:%M %d %b %y"
+      refreshInterval: 8
+      repositories:
+        - "/Users/mudox/Develop/Rust/tav"  
+      position:
+        left: 0
+        top: 1
+        height: 1
+        width: 1
+
+
+    ap:  
+      type: git
+      enabled: true
+      title: Ap
+      commitCount: 3
+      # commitFormat: "[forestgreen]%h [grey]%cd [white]%s [grey]%an[white]"
+      dateFormat: "%H:%M %d %b %y"
+      refreshInterval: 8
+      repositories:
+        - "/Users/mudox/Develop/Rust/ap"  
+      position:
+        left: 1
+        top: 1
+        height: 1
+        width: 1
+
+
+    # hs-config:  
+      # type: git
+      # enabled: true
+      # title: Hammerspoon
+      # commitCount: 3
+      # commitFormat: "[forestgreen]%h [grey]%cd [white]%s [grey]%an[white]"
+      # dateFormat: "%H:%M %d %b %y"
+      # refreshInterval: 8
+      # repositories:
+        # - "/Users/mudox/Git/hs-config"  
+      # position:
+        # left: 3
+        # top: 0
+        # height: 1
+        # width: 1
+
+

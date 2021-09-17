@@ -1,0 +1,9 @@
+# vim swap files.
+*.swp
+
+# vim temporary files.
+*~
+
+# Mac OSX folder data file.
+.DS_Store
+DerivedData

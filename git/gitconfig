@@ -1,0 +1,112 @@
+[user]
+	name = mudox
+	email = imudox@gmail.com
+
+[core]
+	excludesfile     = /Users/mudox/.dotfiles/git/cvsignore
+	editor = nvim
+	autocrlf = input
+
+[diff]
+	tool = vscode
+	prompt           = No
+	submodule        = log
+
+[color]
+	diff             = auto
+	status           = auto
+	branch           = auto
+	ui               = auto
+
+[alias]
+	lg               = log --color --graph --pretty=format:'%Cred%h%Creset %s %C(bold blue) by <%an> %Creset%C(dim green) (%cr) %Creset %C(yellow ul)%d%Creset'
+	st               = status
+	cm               = commit
+	br               = branch
+	co               = checkout
+	df               = diff
+	ls               = ls-files
+	ig               = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
+	# interactive      = auto
+
+[color "branch"]
+	current          = yellow reverse
+	local            = yellow
+	remote           = green
+
+[color "diff"]
+	meta             = yellow
+	frag             = magenta
+	plain            = white dim
+	old              = red
+	new              = green
+	commit           = yellow
+	func             = green dim
+
+[color "status"]
+	added            = yellow bold
+	changed          = cyan
+	untracked        = white dim
+	branch           = green bold ul
+
+
+[status]
+	relativePaths    = false
+	submoduleSummary = true
+
+[push]
+	default          = simple
+
+[filter "media"]
+	clean            = git-media-clean %f
+	smudge           = git-media-smudge %f
+
+[filter "lfs"]
+	clean            = git-lfs clean -- %f
+	smudge           = git-lfs smudge -- %f
+	required         = true
+	process          = git-lfs filter-process
+
+[gui]
+	recentrepo       = /Users/mudox/Git/neovim
+
+[github]
+	user             = cempri@163.com
+
+[http]
+;proxy            = http://127.0.0.1:8888
+
+[https]
+;proxy            = http://127.0.0.1:8888
+
+[mergetool]
+	keepBackup = false
+
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[credential]
+	helper = osxkeychain
+[pull]
+	rebase = true
+[init]
+	defautBranch = main
+	defaultBranch = main
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
+
+[interactive]
+    diffFilter = delta --color-only

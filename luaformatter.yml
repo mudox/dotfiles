@@ -1,0 +1,51 @@
+# Indent
+indent_width: 2
+use_tab: false
+continuation_indent_width: 2
+
+# Code block
+keep_simple_control_block_one_line: false
+
+# Define function
+keep_simple_function_one_line: false
+
+# break_after_functiondef_lp: true
+# break_before_functiondef_rp: true
+
+# Call function
+break_after_functioncall_lp: false
+break_before_functioncall_rp: false
+
+# Paramters
+align_parameter: false
+chop_down_parameter: false
+
+# Table
+align_table_field: true
+
+chop_down_table: true
+chop_down_kv_table: true
+
+# break_after_table_lb: true
+# break_before_table_rb: true
+
+extra_sep_at_table_end: true
+
+# Expression
+# break_after_operator: true
+
+# String
+double_quote_to_single_quote: true
+single_quote_to_double_quote: false
+
+# Spaces
+# spaces_inside_functiondef_parens: true
+
+spaces_inside_functiondcall_parens: true
+spaces_before_call: 1
+
+# spaces_inside_table_braces: true
+
+spaces_around_equals_in_field: true
+# New line
+# line_breaks_after_function_body: 2

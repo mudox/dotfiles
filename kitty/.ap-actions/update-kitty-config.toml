@@ -1,0 +1,6 @@
+icon = "🐈"
+
+# required
+title = "Update Kitty config"
+
+description = "Download the latest version from offical site and then `nvim -d` them"

@@ -1,0 +1,26 @@
+" bootstrap
+let configpath = '/Users/mudox/.dotfiles/cvimrc'
+set localconfig
+
+set cncpcompletion
+
+" resource
+map cor source '/Users/mudox/.dotfiles/cvimrc'
+
+" tab navigation
+map .   nextTab
+map ,   previousTab
+
+map d   closeTab
+map u   lastClosedTab
+
+map coh clearSearchHighlight
+
+map > nextMatchPattern
+map < previousMatchPattern
+
+" scrolling
+set smoothscroll
+let fullpagescrollpercent = 80
+map J scrollFullPageDown
+map K scrollFullPageUp

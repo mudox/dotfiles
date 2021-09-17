@@ -1,0 +1,6 @@
+icon = " "
+
+# required
+title = "List all zsh options"
+
+description = "It list option values in subprocess not in current shell process, which is in non-interactive, non-login mode"

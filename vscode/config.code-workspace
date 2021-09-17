@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "Dotfiles",
+      "path": "/Users/mudox/Git/dotfiles"
+    },
+    {
+      "name": "Neovim",
+      "path": "/Users/mudox/Git/neovim-config"
+    },
+    {
+      "name": "Hammerspoon",
+      "path": "/Users/mudox/Git/hs-config"
+    }
+  ],
+  "settings": {}
+}

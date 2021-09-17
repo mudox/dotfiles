@@ -1,0 +1,19 @@
+# remove timestamp
+regexp=\w+ \d{2} \d{2}:\d{2}:\d{2}\.\d{3}
+replace=
+-
+# error
+regexp=ERRO
+replace=\033[38;5;196m\033[m
+-
+# warn
+regexp=WARN
+replace=\033[38;5;200m \033[m
+-
+# info
+regexp=INFO
+replace=\033[38;5;220m \033[m
+-
+# debug
+regexp=DEBG
+replace=\033[38;5;22m· \033[m

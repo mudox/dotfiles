@@ -1,0 +1,130 @@
+version: 1
+
+# [0 - 4] or `auto`
+# The smaller the number, the more compact the layout
+layoutLevel: auto
+
+# Mininum spaces between left part and right part of the ui layout
+# WARNING: must be >= 4
+minGap: 4
+
+# Minimum width of the entire fzf interface
+# WARNING: must be >= 40
+minWidth: 46
+
+symbol:
+  # The value MUST be one of the keys of symbol schemes listed below.
+  # use: emoji
+  use: nerd
+
+  schemes:
+    # A symbol scheme named `nerd` use nerd font:
+    # https://github.com/ryanoasis/nerd-fonts
+    nerd: # specify it as value of key `use` above to select this symbol scheme.
+      # symbol shown in the center of the unloaded bar
+      unloaded: 
+
+      # can be empty, default to empty symbol
+      # sessionDefault: ""
+
+      # can be empty, defaults to `·`
+      windowDefault: "- "
+
+      sessions:
+        # Add, change whatever session names (CASE-SENSITIVE) you like and their
+        # corresponding symbols here.
+        # Symbol (the value) MUST be 1 character.
+
+        Dotfiles: 
+        Neovim: 
+        Hammerspoon: 
+        Rust: 🅁
+        Swift: 🅂
+        ECS: 
+        # Play: 
+        # Tav: 
+        # Xcode-Log: 
+        # Frameworks: 
+
+    # You can add more schemes below ...
+
+    # There is an another symbol scheme named `emoji` using emoji's.
+    emoji:
+      unloaded: " "
+      sessionDefault: 🐠
+      windowDefault: 
+      sessions:
+        Dotfiles: 🦊
+        Neovim: 🦚
+        Hammerspoon: 🔭
+
+# The structure is similar to above
+# WARNING: do not change the keys.
+color:
+  use: hugo
+
+  schemes:
+    hugo:
+      # Value here can be one of:
+      # 1. balck, red, green, blue, yellow, magenta, cyan, white.
+      # 2. number from 0 - 255 if your terminal support 256 colors.
+      # 3. comma separated RGB group (e.g. `8, 5 244`), if your terminal support true color.
+      # 4. web css color form (e.g. `#F9E01C`, `#fff`).
+      background: "#0A1920"
+
+      liveSessionSymbol: "#fff"
+      liveSessionLineLeft: "#FF4088"
+
+      windowSymbol: "#33BA91"
+      windowLineLeft: "#EBB951"
+      windowLineRight: "#0594CB"
+
+      unloadedBar: 242
+      unloadedBarSymbol: white
+
+      deadSessionSymbol: "#888"
+      deadSessionLineLeft: "#33BA91"
+      deadSessionLineRight: 242
+
+      message: blue
+      error: red
+
+    cool:
+      background: "#040404"
+
+      liveSessionSymbol: "#FFF"
+      liveSessionLineLeft: "#FFE066"
+
+      windowSymbol: "#FFF"
+      windowLineLeft: "#F25F5C"
+      windowLineRight: "#70C1B3"
+
+      unloadedBar: 242
+      unloadedBarSymbol: white
+
+      deadSessionSymbol: red
+      deadSessionLineLeft: "#247BA0"
+      deadSessionLineRight: 242
+
+      message: yellow
+      error: red
+
+    default:
+      background: black
+
+      liveSessionSymbol: white
+      liveSessionLineLeft: green
+
+      windowSymbol: 242
+      windowLineLeft: blue
+      windowLineRight: 242
+
+      unloadedBarSymbol: white
+      unloadedBar: 242
+
+      deadSessionSymbol: red
+      deadSessionLineLeft: 242
+      deadSessionLineRight: 242
+
+      message: yellow
+      error: red

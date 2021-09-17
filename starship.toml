@@ -1,0 +1,97 @@
+add_newline = true
+scan_timeout = 30
+command_timeout = 500
+
+[character]
+# success_symbol = "[](green) "
+# success_symbol = "[](green) "
+# error_symbol = "[](red) "
+# vicmd_symbol = "[](blue) "
+
+[status]
+disabled = false
+format = '[$symbol $int( $common_meaning)(\($signal_number\))$signal_name]($style) '
+
+symbol = ''
+# success_symbol = '﫟'
+success_symbol = ''
+
+map_symbol = true
+sigint_symbol = ' '
+not_found_symbol = ' '
+not_executable_symbol = ' '
+
+[jobs]
+symbol = " "
+
+[cmd_duration]
+min_time = 2_000
+
+[package]
+disabled = true
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+read_only = "  "
+fish_style_pwd_dir_length = 1
+
+[shlvl]
+disabled = false
+threshold = 5
+symbol = '\$'
+
+[git_branch]
+format = '[$branch]($style) '
+# symbol = ''
+truncation_length = 8
+# truncation_symbol = ""
+
+[git_commit]
+format = '[\($hash\)]($style) [$tag]($style)'
+# commit_hash_length = 7
+# tag_symbol = "🔖 "
+only_detached = false
+
+[git_state]
+format = '[$state( $progress_current/$progress_total)]($style) '
+
+[git_status]
+format = '[($conflicted )($untracked$deleted$modified$renamed )($stashed$staged )($ahead_behind )]($style)'
+
+conflicted = "[$count](red)"
+
+ahead = '[a$count](green)'
+behind = '[b$count](red)'
+diverged = '[a$ahead_count](green)[b$behind_count](red)'
+
+untracked = '[(u$count)](blue)'
+deleted = '[(d$count)](red)'
+modified = '[(m$count)](yellow)'
+renamed = '[(r$count)](green)'
+
+stashed = '[#$count](cyan)'
+staged = '[+$count](purple)'
+
+[lua]
+disabled = true
+
+[python]
+# format = '[\[py\](${version} )(\($virtualenv\) )]($style)'
+format = '[ (${version} )($virtualenv )]($style)'
+python_binary = "python3"
+pyenv_version_name = true
+detect_extensions = []
+
+[ruby]
+disabled = true
+
+[rust]
+disabled = true
+
+[swift]
+disabled = true
+
+[time]
+# disabled = false
+# format = '[$time]($style) '

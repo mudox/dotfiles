@@ -1,0 +1,6 @@
+icon = " "
+
+# required
+title = "Push current repo to remove `github` & `gitee`"
+
+description = "Open repo page in browser after pushing"

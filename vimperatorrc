@@ -1,0 +1,83 @@
+" ABBREVIATIONS   {{{1
+
+abbreviate gh        https://github.com/notifications
+abbreviate json      http://www.json.org/
+abbreviate lr        https://luarocks.org/
+abbreviate mdn       https://developer.mozilla.org/en-US/docs/Web
+abbreviate nvim      https://github.com/neovim/neovim
+abbreviate pods      www.cocoapods.org
+abbreviate rac       https://github.com/ReactiveCocoa
+abbreviate racdoc    http://reactivecocoa.io/reactiveswift/docs/latest/
+abbreviate rw        https://www.raywenderlich.com/
+abbreviate xc        http://xclient.info
+
+" Python
+abbreviate mini      https://docs.python.org/2/library/string.html?highlight=mini%20language#formatspec
+
+" Other
+abbreviate wy        http://www.163.com
+abbreviate yt        www.youtube.com
+
+" Ptt.cc
+abbreviate pttcd     https://www.ptt.cc/bbs/China-Drama/index.html
+abbreviate pttlol    https://www.ptt.cc/bbs/LoL/index.html
+abbreviate pttgs     https://www.ptt.cc/bbs/Gossiping/index.html
+
+" Site
+abbreviate hugo      http://gohugo.io
+abbreviate hg        http://localhost:1313/
+abbreviate home      http://mudox.github.io
+
+
+" Apple
+abbreviate appdev    https://developer.apple.com
+abbreviate acc       http://developer.apple.com/account
+abbreviate itc       https://itunesconnect.apple.com
+
+abbreviate hig       https://developer.apple.com/ios/human-interface-guidelines
+
+abbreviate se        https://apple.github.io/swift-evolution/
+
+abbreviate awwdc     http://asciiwwdc.com
+abbreviate wwdc      https://developer.apple.com/videos
+
+" VPS
+abbreviate bw        https://bandwagonhost.com/clientarea.php
+
+abbreviate fy        fanyi.baidu.com
+
+"}}}1
+
+" MAPPINGS        {{{1
+noremap coh :noh<Cr><Esc><Esc>
+noremap gR :source ~/.vimperatorrc<Cr>
+
+noremap J <C-d>
+noremap K <C-u>
+noremap j 7j
+noremap k 7k
+
+noremap A <Nop>
+noremap a <Nop>
+"noremap <C-o> <Nop>
+"noremap <C-i> <Nop>
+
+noremap , gT
+noremap . gt
+noremap > ]]
+noremap < [[
+
+noremap coh :noh<Cr>
+
+"}}}1
+
+" OPTIONS         {{{1
+set complete=
+"set hintchars=12347890
+
+set nextpattern=\\bnext\\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b,^下一页$,^下頁>$
+set previouspattern=\\bprev|previous\\b,^<$,^(<<|«)$,^(<|«),(<|«)$,^上一页$,^<上頁$
+
+"}}}1
+
+" vim: ft=vim foldmethod=marker

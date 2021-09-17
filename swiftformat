@@ -1,0 +1,10 @@
+--swiftversion 5.2
+
+--exclude Carthage,DerivedData,Example,Pods,R.generated.swift,R.temp.swift
+
+--disable redundantSelf,blankLinesAroundMark,blankLinesAtStartOfScope,wrapMultilineStatementBraces
+
+--stripunusedargs closure-only
+--nospaceoperators "...,..<"
+--wraparguments before-first
+--wrapcollections before-first
