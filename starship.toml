@@ -10,16 +10,15 @@ command_timeout = 500
 
 [status]
 disabled = false
-format = '[$symbol $int( $common_meaning)(\($signal_number\))$signal_name]($style) '
-
-symbol = ''
-# success_symbol = '﫟'
-success_symbol = ''
+format = '[$symbol $int ($common_meaning )(\($signal_number\))($signal_name )]($style)'
 
 map_symbol = true
-sigint_symbol = ' '
-not_found_symbol = ' '
-not_executable_symbol = ' '
+symbol                = ''
+success_symbol        = ' '
+signal_symbol         = ' '
+sigint_symbol         = ' '
+not_found_symbol      = ' '
+not_executable_symbol = ' '
 
 [jobs]
 symbol = " "
