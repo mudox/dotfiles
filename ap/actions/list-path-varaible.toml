@@ -1,6 +1,0 @@
-icon = ""
-
-# required
-title = "CD to path in `$path`"
-
-description = "WARNING: It will increase $SHLVL"

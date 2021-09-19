@@ -1,8 +1,6 @@
 #!/usr/bin/env zsh
 set -euo pipefail
 
-source "${MDX_DOT_DIR/shell/jack.zsh}"
-
 set +u
 if tmux list-sessions >/dev/null 2>&1; then
   jack warn 'Tmux server is already running, run `tksv` to kill it'

@@ -1,8 +1,6 @@
 #!/usr/bin/env zsh
 set -euo pipefail
 
-source ~/.dotfiles/scripts/lib/jack.zsh
-
 dir="${HOME}/Library/Developer/Xcode/DerivedData"
 
 dir_size() {
@@ -10,15 +8,15 @@ dir_size() {
 }
 
 rm_dir() {
-  jackProgress $'Delete ...'
+  jack progress $'Delete ...'
   #rm -rf "${dir}"
   sleep 3
-  jackInfo 'Done'
+  jack info 'Done'
 }
 
-jackProgress 'Caculating size ...'
+jack progress 'Caculating size ...'
 size=$(dir_size)
-jackEndProgress
+jack endProgress
 
 while true; do
   read -p "Delete '${dir}' (${size}) [y/n]? " -n1 -r yn
@@ -28,7 +26,7 @@ while true; do
     exit
     ;;
   [Nn]*)
-    jackInfo $'\nCanceled'
+    jack info $'\nCanceled'
     exit
     ;;
   *) echo "Please tap 'y' or 'n'" ;;
