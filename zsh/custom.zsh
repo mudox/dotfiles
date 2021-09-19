@@ -5,13 +5,13 @@
 # Supporting loading platform agnostic scripts as well
 # as platform specific scripts
 
-local shared="${MDX_DOT_DIR}/shell"
-local macos="$shared/macos"
-local cygwin="$shared/cygwin"
-local archlinux="$shared/archlinux"
+local init="${MDX_DOT_DIR}/zsh/init"
+local macos="$init/macos"
+local cygwin="$init/cygwin"
+local archlinux="$init/archlinux"
 
 # load system agnostic configs
-for s in "$shared"/*; do
+for s in "$init"/*; do
   [[ -f "$s" ]] && source $s
 done
 

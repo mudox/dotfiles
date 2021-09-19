@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source ~/.dotfiles/scripts/lib/jack.zsh
-
 # executable availability check
 if [[ -z "$(type hugo)" ]]; then
   printf "\e[31mmissing executable hugo..., quit\e[0m\n"
@@ -18,7 +16,7 @@ hb() {
   # Source path
   local src_path="${HOME}/Sites/home"
   if [ ! -d "${src_path}" ]; then
-    jackError "missing ${src_path} as source repo, quit ..."
+    jack error "missing ${src_path} as source repo, quit ..."
     return
   fi
 
@@ -29,12 +27,12 @@ hb() {
   # Destination path
   local dest_path="${HOME}/Sites/mudox.github.io"
   if [ ! -d "${dest_path}" ]; then
-    jackError "missing ${dest_path} as destination repo, quit ..."
+    jack error "missing ${dest_path} as destination repo, quit ..."
     return
   fi
 
   # Build site
-  jackNote "\nStart building site ..."
+  jack note "\nStart building site ..."
 
   rm -rf "${build_path}" &>/dev/null # remove public directory first.
 
@@ -45,29 +43,29 @@ hb() {
 
   # Check hugo buiding result
   if (($? != 0)); then
-    jackError "build site failed, quit"
+    jack error "build site failed, quit"
     return
   fi
 
   # Install into desitination path
-  jackNote "\nInstalling production ..."
+  jack note "\nInstalling production ..."
   rm -rf "${dest_path}"/* &>/dev/null # Clear the directory up first
   cp -rT "${build_path}" "${dest_path}"
 
   if (($? != 0)); then
-    jackError "copying failed, quit"
+    jack error "copying failed, quit"
     return
   fi
 
   # Depoly to github
-  jackNote "\nSyncing <${dest_path##*/}>"
+  jack note "\nSyncing <${dest_path##*/}>"
   cd "${dest_path}"
   git add --all . &>/dev/null
   git commit -m "${*:-Cumulative update}"
   git push
 
   # Sync hugo source repo
-  jackNote "\nSyncing <${src_path##*/}>"
+  jack note "\nSyncing <${src_path##*/}>"
   cd "${src_path}"
   git add --all . &>/dev/null
   git commit -m "${*:-Cumulative update}"
