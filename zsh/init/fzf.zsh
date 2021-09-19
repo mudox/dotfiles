@@ -8,6 +8,7 @@ export FZF_COMPLETION_TRIGGER=',,'
 export FZF_COMPLETION_OPTS='-e'
 export FZF_DEFAULT_OPTS='
 --height=70%
+--min-height=40
 --layout=reverse
 --info=inline
 --pointer=▶
@@ -105,7 +106,6 @@ mudox-zsh-widget-j() {
   target_dir=$(
     z -l | sed 's/[0-9.,]* *//' |
       fzf \
-        --height=20% --min-height=12 \
         --tiebreak=end,length \
         --margin=2 \
         --select-1 \
