@@ -7,7 +7,7 @@ if [[ $MDX_PROFILE_ZSH = yes ]]; then
   zmodload zsh/zprof
 fi
 
-# env
+# global env
 export -r MDX_GIT_DIR="${HOME}/Git"
 export -r MDX_DOT_DIR="${HOME}/.dotfiles"
 export -r MDX_NVIM_DIR="${HOME}/Git/neovim-config"
@@ -18,20 +18,23 @@ export -r MDX_HS_DIR="${HOME}/Git/hs-config"
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 
+# uniquing path lists
 typeset -U path
+typeset -U fpath
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 () {
-  local config_dir=${MDX_DOT_DIR}/zsh
-  source "${config_dir}/zinit.zsh"
-  source "${config_dir}/ohmyzsh.zsh"
-  source "${config_dir}/custom.zsh"
+  local dir=${MDX_DOT_DIR}/zsh
+  source "${dir}/zinit.zsh"
+  source "${dir}/ohmyzsh.zsh"
+  source "${dir}/custom.zsh"
 }
 
 # path
 path=(~/.bin $path)
+
 # prompt
 eval "$(starship init zsh)"
 
