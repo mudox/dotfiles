@@ -1,6 +1,0 @@
-icon = " "
-
-# required
-title = "All command's items in zsh"
-
-description = "Including aliases, reserved words, builtins, functions, commmands ..."

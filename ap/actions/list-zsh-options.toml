@@ -1,0 +1,6 @@
+icon = " "
+
+# required
+title = "List all zsh options"
+
+description = "This only reflect sub-shell running in non-interactive mode"
