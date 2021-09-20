@@ -30,6 +30,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
   source "${config_dir}/custom.zsh"
 }
 
+# path
+path=(~/.bin $path)
 # prompt
 eval "$(starship init zsh)"
 

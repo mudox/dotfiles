@@ -11,27 +11,31 @@ local cygwin="$init/cygwin"
 local archlinux="$init/archlinux"
 
 # load system agnostic configs
-for s in "$init"/*; do
-  [[ -f "$s" ]] && source $s
-done
+local load_init_files() {
+  for f in $1/*.zsh; do
+    source $f
+  done
+}
+
+local init="${MDX_DOT_DIR}/zsh/init"
+local macos="${init}/macos"
+local cygwin="${init}/cygwin"
+local archlinux="${init}/archlinux"
+
+load_init_files ${init}
 
 # load system specific settings.
 case $(uname -s) in
 Darwin)
-  for s in "$macos"/*; do
-    [[ -f "$s" ]] && source "$s"
-  done
+  load_init_files ${macos}
   ;;
 CYGWIN*)
-  for s in "$cygwin"/*; do
-    [[ -f "$s" ]] && source "$s"
-  done
+  load_init_files ${cygwin}
   ;;
 Linux)
   case $(uname -r) in
-  *ARCH) # Arch Linux
-    source "$archlinux/yaourt"
-    source "$archlinux/vpn"
+  *ARCH) # arch linux
+    load_init_files ${archlinux}
     ;;
   *)
     echo "\e[31m[.zshrc]: un-recognized linux distro."
@@ -42,3 +46,5 @@ Linux)
   echo "\e[31m[.zshrc]: un-recognized platform."
   ;;
 esac
+
+unfunction load_init_files
