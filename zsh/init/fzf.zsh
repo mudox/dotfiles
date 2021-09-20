@@ -1,4 +1,4 @@
-if [[ ! $- =~ i ]]; then
+if [[ ! -o interactive ]]; then
   return
 fi
 
