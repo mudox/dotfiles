@@ -22,3 +22,9 @@ alias wm='w -m'
 # typeset
 alias t='typeset'
 alias tp='typeset -p1'
+
+# print
+alias p='print'
+
+# bindkey
+alias keys='bindkey | fzf --multi'

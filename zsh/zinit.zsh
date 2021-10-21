@@ -38,6 +38,10 @@ zinit light-mode for \
     brew
 
     tmux
+
+    bundler
+
+    cargo
   )
 
   for plug in $omz_plugins; do

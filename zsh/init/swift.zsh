@@ -1,4 +1,4 @@
 # vim: filetype=zsh
 
-alias spm="swift package"
-alias spg="spm generate-xcodeproj"
+alias sp="swift package"
+alias spg="sp generate-xcodeproj"
