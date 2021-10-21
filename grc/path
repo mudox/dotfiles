@@ -1,0 +1,22 @@
+-
+# home
+regexp=(/Users/mudox)
+replace=\033[38;5;82m\1\033[m
+-
+# /opt/homebrew
+regexp=(/opt/homebrew)
+replace=\033[38;5;199m\1\033[m
+-
+# system default paths
+regexp=^(/bin|/sbin|/usr/sbin|/usr/bin|/usr/local/bin)
+replace=\033[38;5;24m\1\033[m
+-
+# pyenv
+regexp=(pyenv)
+replace=\033[38;5;39m\1\033[m
+-
+# rbenv
+regexp=(rbenv)
+replace=\033[38;5;196m\1\033[m
+
+
