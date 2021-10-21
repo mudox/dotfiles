@@ -13,8 +13,10 @@ jack verbose "Tmux server: $(tmux which-server)"
 
 sessions=(
   Default
-  Dotfiles
-  Neovim
+  # Dotfiles
+  # Neovim
+  # Tmux
+  # Hammerspoon
 )
 
 for s in "${sessions[@]}"; do
