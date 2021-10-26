@@ -1,0 +1,6 @@
+icon = " "
+
+# required
+title = "Show infomation from `xcodebuild`"
+
+description = "SDKs, destinations"
