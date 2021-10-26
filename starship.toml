@@ -2,6 +2,9 @@ add_newline = true
 scan_timeout = 30
 command_timeout = 500
 
+[battery]
+disabled = true
+
 [character]
 # success_symbol = "[](green) "
 # success_symbol = "[](green) "
@@ -14,9 +17,10 @@ format = '[$symbol $int ($common_meaning )(\($signal_number\))($signal_name )]($
 
 map_symbol = true
 symbol                = ''
-success_symbol        = ' '
+success_symbol        = ' '
+# success_symbol        = ' '
 signal_symbol         = ' '
-sigint_symbol         = ' '
+sigint_symbol         = ' '
 not_found_symbol      = ' '
 not_executable_symbol = ' '
 
@@ -30,9 +34,9 @@ min_time = 2_000
 disabled = true
 
 [directory]
+read_only = "  "
 truncation_length = 3
 truncate_to_repo = true
-read_only = "  "
 fish_style_pwd_dir_length = 1
 
 [shlvl]
@@ -73,6 +77,9 @@ stashed = '[#$count](cyan)'
 staged = '[+$count](purple)'
 
 [lua]
+disabled = true
+
+[perl]
 disabled = true
 
 [python]
