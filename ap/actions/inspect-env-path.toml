@@ -1,0 +1,6 @@
+icon = " "
+
+# required
+title = "Inspect `$path`"
+
+description = "Print `$path` with common path colorized"
