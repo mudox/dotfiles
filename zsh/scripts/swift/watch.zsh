@@ -1,8 +1,6 @@
 #!/usr/bin/env zsh
+set -euo pipefail
 
-if [[ $# -ne 1 || ! $1 =~ [brt] ]]; then
-  echo "Usage: $0 [b|r|t]"
-  exit 1
-fi
-
-fswatch -0or ./Sources ./Tests | xargs -0 -n1 -I{} "$MDX_DOT_DIR/scripts/swift/watch-action.zsh" $1
+fswatch -0or -l 0.5 \
+  Sources Tests .ap-actions/tmux-watch.{zsh,toml} |
+  xargs -0 -n1 -I{} "${MDX_DOT_DIR}/zsh/scripts/swift/watch-action.zsh"
