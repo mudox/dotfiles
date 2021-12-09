@@ -1,5 +1,8 @@
 # vim: filetype=zsh foldmethod=marker
 
+# proxy
+source "${HOME}/.config/proxy"
+
 # profile zsh launch
 alias pz='MDX_PROFILE_ZSH=yes zsh -i -c exit'
 
@@ -42,9 +45,6 @@ eval "$(starship init zsh)"
 if [[ -n $PS1 ]]; then
   eval "$("$HOME/Git/base16-shell/profile_helper.sh")"
 fi
-
-# proxy
-source "${HOME}/.config/proxy"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
