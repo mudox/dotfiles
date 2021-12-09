@@ -17,7 +17,7 @@ export FZF_DEFAULT_OPTS='
 --select-1
 '
 
-zinit snippet 'https://github.com/fnune/base16-fzf/blob/master/bash/base16-gruvbox-dark-hard.config'
+zinit snippet 'https://raw.githubusercontent.com/fnune/base16-fzf/master/bash/base16-gruvbox-dark-hard.config'
 
 FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color=gutter:-1,bg+:-1"
 
