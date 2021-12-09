@@ -16,7 +16,7 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-# Load oh-my-zsh plugin as `snippet`
+# Load oh-my-zsh plugins as `snippet`s
 () {
   omz_plugins=(
     git
@@ -58,7 +58,7 @@ zinit light-mode for \
 # Zsh syntax highlighting
 zinit light 'zdharma-continuum/fast-syntax-highlighting'
 
-# Zsh History search & match
+# Zsh history search & match
 zinit ice wait lucid
 zinit light 'zsh-users/zsh-history-substring-search'
 

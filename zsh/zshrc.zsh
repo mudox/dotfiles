@@ -43,7 +43,7 @@ eval "$(starship init zsh)"
 
 # color
 if [[ -n $PS1 ]]; then
-  eval "$("$HOME/Git/base16-shell/profile_helper.sh")"
+  eval "$("${MDX_GIT_DIR}/base16-shell/profile_helper.sh")"
 fi
 
 # fzf
