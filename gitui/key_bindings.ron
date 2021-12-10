@@ -1,4 +1,7 @@
 (
+    // leave `h` to `focus_left`
+    open_help: Some(( code: Char('?'), modifiers: ( bits: 0,),)),
+
     focus_right: Some(( code: Char('l'), modifiers: ( bits: 0,),)),
     focus_left: Some(( code: Char('h'), modifiers: ( bits: 0,),)),
     focus_above: Some(( code: Char('k'), modifiers: ( bits: 0,),)),
