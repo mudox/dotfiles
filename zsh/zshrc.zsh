@@ -31,8 +31,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 () {
   local dir=${MDX_DOT_DIR}/zsh
   source "${dir}/zinit.zsh"
-  source "${dir}/custom.zsh"
   source "${dir}/ohmyzsh.zsh"
+  source "${dir}/custom.zsh"
 }
 
 # path
