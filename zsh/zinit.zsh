@@ -9,50 +9,51 @@ autoload -Uz _zinit
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
+  zdharma-continuum/zinit-annex-as-monitor \
+  zdharma-continuum/zinit-annex-bin-gem-node \
+  zdharma-continuum/zinit-annex-patch-dl \
+  zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk
 
 # Load oh-my-zsh plugins as `snippet`s
 () {
-  omz_plugins=(
-    git
-    git-extras
+omz_plugins=(
+  git
+  git-extras
 
-    copydir
-    copyfile
+  copydir
+  copyfile
 
-    brew
+  brew
 
-    tmux
+  bundler
 
-    bundler
+  cargo
+)
 
-    cargo
-  )
-
-  for plug in $omz_plugins; do
-    zinit ice lucid wait'1'
-    zinit snippet "OMZP::${plug}"
-  done
+for plug in $omz_plugins; do
+  zinit ice lucid wait'1'
+  zinit snippet "OMZP::${plug}"
+done
 }
+
+zinit ice lucid wait
+zinit snippet "OMZP::tmux"
 
 # Load plguins lazily
 () {
-  local plugins=(
-    djui/alias-tips
+local plugins=(
+djui/alias-tips
 
-    rupa/z
-    # skywind3000/z.lua
-  )
+rupa/z
+# skywind3000/z.lua
+)
 
-  for plug in $plugins; do
-    zinit ice lucid wait
-    zinit light "$plug"
-  done
+for plug in $plugins; do
+  zinit ice lucid wait
+  zinit light "$plug"
+done
 }
 
 # Zsh syntax highlighting
@@ -74,4 +75,4 @@ zinit light 'zsh-users/zsh-autosuggestions'
 zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" atpull'%atclone' \
   pick"clrs.zsh" nocompile'!' \
   atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-zinit light trapd00r/LS_COLORS
+  zinit light trapd00r/LS_COLORS
