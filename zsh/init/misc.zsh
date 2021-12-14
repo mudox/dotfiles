@@ -41,3 +41,7 @@ setopt no_correct_all
 setopt ignore_eof
 
 bindkey '\eq' push-line-or-edit
+
+# insert a empty line bwteen prompt and output
+_linebreak_preexec() { print }
+add-zsh-hook preexec _linebreak_preexec
