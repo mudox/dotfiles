@@ -1,10 +1,15 @@
+# Envs
+export TMUX_AUTOQUIT=true
+
+# Aliases
+alias ta='tmux attach -t'
+alias tad='tmux attach -d -t'
+alias ts='tmux new-session -s'
+alias tl='tmux list-sessions'
+alias tksv='tmux kill-server'
+alias tkss='tmux kill-session -t'
+
+# Key bindings
 bindkey -r '^L'
 bindkey -r '^[^L'
 bindkey '^[l' clear-screen
-
-# auto start tmux when open a new terminal app window
-export ZSH_TMUX_AUTOSTART=true
-
-# fix: zinit snippet does not download dependence files (tmux.extra.conf)
-# `default-terminal` is already set in my .tmux.conf
-export ZSH_TMUX_FIXTERM=false

@@ -54,3 +54,12 @@ if [[ $MDX_PROFILE_ZSH = yes ]]; then
   zprof
   unset MDX_PROFILE_ZSH
 fi
+
+# Autostart if not already in tmux
+if [[ -z "$TMUX" && -z "$INSIDE_EMACS" && -z "$EMACS" && -z "$VIM" ]]; then
+  if [[ "$TMUX_AUTOSTARTED" != "true" ]]; then
+    export TMUX_AUTOSTARTED=true
+    tmux
+    [[ $TMUX_AUTOQUIT = true ]] && exit
+  fi
+fi

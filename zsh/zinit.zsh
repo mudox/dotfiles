@@ -38,9 +38,6 @@ for plug in $omz_plugins; do
 done
 }
 
-zinit ice lucid wait
-zinit snippet "OMZP::tmux"
-
 # Load plguins lazily
 () {
 local plugins=(
