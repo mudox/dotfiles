@@ -9,9 +9,15 @@
       "path": "/Users/mudox/Git/neovim-config"
     },
     {
+      "name": "Tmux"
+      "path": "../../Git/tmux-config"
+    },
+    {
       "name": "Hammerspoon",
       "path": "/Users/mudox/Git/hs-config"
     }
   ],
-  "settings": {}
+  "settings": {
+    "Lua.diagnostics.globals": ["vim", "pl", "stdpath"]
+  }
 }
