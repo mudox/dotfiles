@@ -1,4 +1,5 @@
 format = """
+
 $username\
 $hostname\
 $shlvl\
@@ -55,18 +56,19 @@ $openstack\
 $env_var\
 $crystal\
 $custom\
-$cmd_duration\
 $fill\
+$cmd_duration\
+$time\
 $line_break\
 $jobs\
 $battery\
-$time\
 $status\
 $shell\
 $character"""
 
 
 add_newline = true
+
 scan_timeout = 30
 command_timeout = 500
 
@@ -171,5 +173,5 @@ disabled = true
 disabled = true
 
 [time]
-# disabled = false
+disabled = false
 # format = '[$time]($style) '
