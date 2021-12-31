@@ -1,5 +1,4 @@
 format = """
-
 $username\
 $hostname\
 $shlvl\
@@ -83,7 +82,7 @@ disabled = true
 
 [fill]
 symbol = "―"
-style = "#333333"
+style = "#303030"
 
 [status]
 disabled = false
