@@ -18,58 +18,53 @@ zinit light-mode for \
 
 # Load oh-my-zsh plugins as `snippet`s
 () {
-omz_plugins=(
-  git
-  git-extras
+  omz_plugins=(
+    git
+    git-extras
 
-  copydir
-  copyfile
+    copydir
+    copyfile
 
-  brew
+    brew
 
-  bundler
+    bundler
+    # cargo # it contributes 55 ~ 130ms startup time
+  )
 
-  cargo
-)
-
-for plug in $omz_plugins; do
-  zinit ice lucid wait'1'
-  zinit snippet "OMZP::${plug}"
-done
+  for plug in $omz_plugins; do
+    zinit ice wait lucid 
+    zinit snippet "OMZP::${plug}"
+  done
 }
 
 # Load plguins lazily
 () {
-local plugins=(
-djui/alias-tips
+  local plugins=(
+  djui/alias-tips
 
-rupa/z
-# skywind3000/z.lua
-)
+  rupa/z
+  # skywind3000/z.lua
+  )
 
-for plug in $plugins; do
-  zinit ice lucid wait
-  zinit light "$plug"
-done
+  for plug in $plugins; do
+    zinit ice wait lucid
+    zinit light "$plug"
+  done
 }
-
-# Zsh syntax highlighting
-zinit light 'zdharma-continuum/fast-syntax-highlighting'
 
 # Zsh history search & match
 zinit ice wait lucid
 zinit light 'zsh-users/zsh-history-substring-search'
 
-# Zsh completion
-zinit ice blockf wait lucid
-zinit light 'zsh-users/zsh-completions'
-
-# Zsh auto suggestions
-zinit ice wait lucid atload'_zsh_autosuggest_start'
-zinit light 'zsh-users/zsh-autosuggestions'
+# Syntax highlighting + completion + suggestion
+zinit wait lucid for \
+  atinit'ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay' 'zdharma-continuum/fast-syntax-highlighting' \
+  blockf 'zsh-users/zsh-completions' \
+  atload'!_zsh_autosuggest_start'  'zsh-users/zsh-autosuggestions'
 
 # LS_COLOR
 zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" atpull'%atclone' \
   pick"clrs.zsh" nocompile'!' \
   atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-  zinit light trapd00r/LS_COLORS
+
+zinit light trapd00r/LS_COLORS
