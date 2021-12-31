@@ -1,7 +1,9 @@
 # vim: filetype=zsh
 
+export EXA_ICON_SPACING=2
+
 # use `exa` instead of `ls`
-alias l="exa --classify --group-directories-first"
+alias l="exa --classify --group-directories-first --icons"
 alias ls=l
 alias tree='l --tree'
 alias l1='l --oneline'
