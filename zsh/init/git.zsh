@@ -15,10 +15,6 @@ else
   git config --global core.editor vim
 fi
 
-# gitignore.io
-function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
-
-
 # GitHub cli `gh` 〈
 
 alias ghb='gh browse'
