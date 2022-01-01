@@ -28,7 +28,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
 # path
-path=(~/.bin "${path}")
+path=(~/.bin $path)
 
 # prompt
 eval "$(starship init zsh)"
