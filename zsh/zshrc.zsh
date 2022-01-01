@@ -16,6 +16,7 @@ export -r MDX_DOT_DIR="${HOME}/.dotfiles"
 export -r MDX_NVIM_DIR="${HOME}/Git/neovim-config"
 export -r MDX_TMUX_DIR="${HOME}/Git/tmux-config"
 export -r MDX_HS_DIR="${HOME}/Git/hs-config"
+export -r MDX_DEV_DIR="${HOME}/Develop"
 
 # locale
 export LC_ALL='en_US.UTF-8'
@@ -65,4 +66,3 @@ if [[ $TERM_PROGRAM != vscode ]]; then
     fi
   fi
 fi
-
