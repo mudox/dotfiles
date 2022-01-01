@@ -3,13 +3,6 @@
 # proxy
 source "${HOME}/.config/proxy"
 
-# profile zsh launch
-alias pz='MDX_PROFILE_ZSH=yes zsh -i -c exit'
-
-if [[ $MDX_PROFILE_ZSH = yes ]]; then
-  zmodload zsh/zprof
-fi
-
 # global env
 export -r MDX_GIT_DIR="${HOME}/Git"
 export -r MDX_DOT_DIR="${HOME}/.dotfiles"
@@ -49,12 +42,6 @@ fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# profile
-if [[ $MDX_PROFILE_ZSH = yes ]]; then
-  zprof
-  unset MDX_PROFILE_ZSH
-fi
 
 # Autostart tmux if not already in tmux
 if [[ $TERM_PROGRAM != vscode ]]; then
