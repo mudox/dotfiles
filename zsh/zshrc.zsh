@@ -1,5 +1,3 @@
-# vim: filetype=zsh foldmethod=marker
-
 # proxy
 source "${HOME}/.config/proxy"
 
@@ -30,7 +28,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
 # path
-path=(~/.bin $path)
+path=(~/.bin "${path}")
 
 # prompt
 eval "$(starship init zsh)"
@@ -54,3 +52,5 @@ if [[ -n $KITTY_WINDOW_ID ]]; then # Only auto start Tmux in Kitty terminal
     fi
   fi
 fi
+
+#  vim: fdm=marker fmr=〈,〉
