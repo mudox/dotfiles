@@ -44,12 +44,13 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Autostart tmux if not already in tmux
-if [[ $TERM_PROGRAM != vscode ]]; then
+if [[ -n $KITTY_WINDOW_ID ]]; then # Only auto start Tmux in Kitty terminal
   if [[ -z "$TMUX" && -z "$INSIDE_EMACS" && -z "$EMACS" && -z "$VIM" ]]; then
-    if [[ "$TMUX_AUTOSTARTED" != "true" ]]; then
-      export TMUX_AUTOSTARTED=true
+    if [[ $TMUX_AUTO_STARTED != true ]]; then
+      export TMUX_AUTO_STARTED=true
       tmux
-      [[ $TMUX_AUTOQUIT = true ]] && exit
+      # auto quit terminal app
+      [[ ! -e /tmp/no-zsh-tmux-auto-quit ]] && exit
     fi
   fi
 fi
