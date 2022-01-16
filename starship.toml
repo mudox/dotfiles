@@ -13,6 +13,18 @@ $git_metrics\
 $git_status\
 $hg_branch\
 $docker_context\
+$custom\
+$fill\
+$cmd_duration\
+$time\
+$line_break\
+$jobs\
+$battery\
+$status\
+$shell\
+$character"""
+
+right_format = """
 $package\
 $cmake\
 $cobol\
@@ -54,22 +66,14 @@ $gcloud\
 $openstack\
 $env_var\
 $crystal\
-$custom\
-$fill\
-$cmd_duration\
-$time\
-$line_break\
-$jobs\
-$battery\
-$status\
-$shell\
-$character"""
-
+"""
 
 add_newline = true
 
 scan_timeout = 30
 command_timeout = 500
+
+continuation_prompt = '[🭰](fg:#31c7f5)'
 
 [battery]
 disabled = true
@@ -89,13 +93,12 @@ disabled = false
 format = '[$symbol $int ($common_meaning )(\($signal_number\))($signal_name )]($style)'
 
 map_symbol = true
-symbol                = ''
-success_symbol        = ' '
-# success_symbol        = ' '
-signal_symbol         = ' '
-sigint_symbol         = ' '
-not_found_symbol      = ' '
-not_executable_symbol = ' '
+symbol                = ''
+signal_symbol         = ''
+sigint_symbol         = ''
+not_found_symbol      = ''
+not_executable_symbol = ''
+success_symbol        = ' '
 
 [jobs]
 symbol = ""
@@ -149,28 +152,39 @@ renamed = '[(r$count)](green)'
 stashed = '[#$count](cyan)'
 staged = '[+$count](purple)'
 
-[lua]
-disabled = true
-
 [perl]
 disabled = true
 
 [python]
-# format = '[\[py\](${version} )(\($virtualenv\) )]($style)'
-format = '[ (${version} )($virtualenv )]($style)'
+format = ' via [${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style)'
+symbol = '  '
 python_binary = "python3"
 pyenv_version_name = true
-detect_extensions = []
 
-[ruby]
-disabled = true
+[docker_context]
+symbol = '  '
 
-[rust]
-disabled = true
+[lua]
+format = " via [$symbol($version)]($style)"
+symbol = ' '
+
+[nodejs]
+format = " via [$symbol($version)]($style)"
+symbol = ' '
 
 [swift]
-disabled = true
+format = " via [$symbol($version)]($style)"
+symbol = ' '
+
+[rust]
+format = " via [$symbol($version)]($style)"
+symbol = '🆁  '
+
+[ruby]
+format = " via [$symbol($version)]($style)"
+symbol = '  '
 
 [time]
 disabled = false
+
 # format = '[$time]($style) '
