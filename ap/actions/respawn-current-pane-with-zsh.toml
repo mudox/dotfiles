@@ -1,0 +1,9 @@
+icon = " "
+
+# required
+title = "Tmux: respawn current pane with `zsh`"
+
+[tmux]
+pane_title = "  Shell"
+
+# description = ""
