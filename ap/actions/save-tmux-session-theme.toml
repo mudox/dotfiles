@@ -1,0 +1,6 @@
+icon = " "
+
+# required
+title = "Save theme of current tmux session"
+
+# description = ""
