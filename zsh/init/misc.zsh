@@ -24,18 +24,7 @@ setopt \
 
 #}}}
 
-# Prompt {{{1
-
-# multiline
-PS2=$'\e[38;5;39m🭰 \e[0m'
-# loop
-PS3=$'\e[38;5;39m❯ \e[0m'
-# debug
-PS4=$'\e[38;5;166m[%N]:%i \e[0m'
-
-# }}}1
-
-setopt correct
+setopt no_correct
 setopt no_correct_all
 
 setopt ignore_eof
