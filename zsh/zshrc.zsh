@@ -1,6 +1,17 @@
 #  vim: fdm=marker fmr=〈,〉
 
+# tmux
+if [[ -n $KITTY_WINDOW_ID ]]; then # Only auto start Tmux in Kitty terminal
+  if [[ -z "$TMUX" && -z "$INSIDE_EMACS" && -z "$EMACS" && -z "$VIM" ]]; then
+    if [[ $TMUX_AUTO_STARTED != true ]]; then
+      export TMUX_AUTO_STARTED=true
+      path=(~/.bin $path)
+      exec tmux
+    fi
+  fi
+fi
 
+# configs
 () {
   local dir=${MDX_DOT_DIR}/zsh
   source "${dir}/zinit.zsh"
@@ -18,20 +29,3 @@ eval "$(starship init zsh)"
 if [[ -n $PS1 ]]; then
   eval "$("${MDX_GIT_DIR}/base16-shell/profile_helper.sh")"
 fi
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Autostart tmux if not already in tmux
-if [[ -n $KITTY_WINDOW_ID ]]; then # Only auto start Tmux in Kitty terminal
-  if [[ -z "$TMUX" && -z "$INSIDE_EMACS" && -z "$EMACS" && -z "$VIM" ]]; then
-    if [[ $TMUX_AUTO_STARTED != true ]]; then
-      export TMUX_AUTO_STARTED=true
-      tmux
-      # auto quit terminal app
-      [[ ! -e /tmp/no-zsh-tmux-auto-quit ]] && exit
-    fi
-  fi
-fi
-
-#  vim: fdm=marker fmr=〈,〉
