@@ -337,4 +337,7 @@ cth() {
 
 # }}}1
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # vim: filetype=zsh foldmethod=marker
