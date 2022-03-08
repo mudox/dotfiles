@@ -10,11 +10,18 @@ tksv() {
 
 # Aliases
 alias ta='tmux attach -t'
-alias tad='tmux attach -d -t'
-alias ts='tmux new-session -s'
-alias tl='tmux list-sessions'
-alias tkss='tmux kill-session -t'
 
+tl() {
+	tmux list-panes -a -F '#S:#W.#P with #{pane_current_command}'
+}
+
+tkss() {
+	before="$(tl)"
+	tmux kill-session -t "$@"
+	after="$(tl)"
+	BAT_STYLE='plain' batdiff <(echo "$before") <(echo "$after")
+}
+ 
 # Key bindings
 bindkey -r '^L'
 bindkey -r '^[^L'
