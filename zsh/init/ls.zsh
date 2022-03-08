@@ -1,5 +1,3 @@
-# vim: filetype=zsh
-
 export EXA_ICON_SPACING=2
 
 # use `exa` instead of `ls`
