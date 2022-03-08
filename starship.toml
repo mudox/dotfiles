@@ -68,7 +68,8 @@ $env_var\
 $crystal\
 """
 
-add_newline = true
+# NOTE: use zsh hook `precmd` & `preexec to padding lines conditionally
+add_newline = false
 
 scan_timeout = 30
 command_timeout = 500
