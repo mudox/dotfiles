@@ -4,6 +4,6 @@ icon = " "
 title = "Tmux: respawn current pane with `nvim`"
 
 [tmux]
-pane_title = "  Edit"
+pane_title = "  Neovim"
 
 # description = ""
