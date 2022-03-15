@@ -1,0 +1,6 @@
+icon = " "
+
+# required
+title = "Build & install neovim"
+
+description = "Installed to ~/.bin/neovim"
