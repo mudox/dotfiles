@@ -1,0 +1,9 @@
+icon = " "
+
+# required
+title = "Tmux: respawn current pane with `nvim` in `coc` mode"
+
+[tmux]
+pane_title = "  Mode: Coc"
+
+# description = ""

@@ -1,9 +1,0 @@
-icon = " "
-
-# required
-title = "Tmux: respawn current pane with `nvim` in `lsp` mode"
-
-[tmux]
-pane_title = "  Edit"
-
-# description = ""
