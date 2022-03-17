@@ -22,7 +22,7 @@ zinit light-mode for \
     git
     git-extras
 
-    copydir
+    copypath
     copyfile
 
     brew
