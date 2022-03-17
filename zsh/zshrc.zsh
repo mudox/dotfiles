@@ -8,9 +8,6 @@
   source "${dir}/custom.zsh"
 }
 
-# path
-path=(~/.bin $path)
-
 # prompt
 eval "$(starship init zsh)"
 
@@ -18,3 +15,6 @@ eval "$(starship init zsh)"
 if [[ -n $PS1 ]]; then
   eval "$("${MDX_GIT_DIR}/base16-shell/profile_helper.sh")"
 fi
+
+# path
+path=(~/.bin ~/.local/bin $path)

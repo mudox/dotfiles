@@ -5,6 +5,3 @@ export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s 'GitHub.Per
 
 # boost bottle downloading
 export HOMEBREW_BOTTLE_DOMAIN='https://mirrors.ustc.edu.cn/homebrew-bottles'
-
-# prepend bin paths before /usr/bin
-path=(/opt/homebrew/{bin,sbin} $path)

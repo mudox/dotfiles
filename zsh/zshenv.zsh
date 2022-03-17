@@ -24,13 +24,14 @@ export MDX_DEV_DIR
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 
-# path
-typeset -U path
-typeset -U fpath
-
 # cargo
 source "$HOME/.cargo/env"
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# path, fpath
+typeset -U fpath
+
+typeset -U path
+path=(~/.bin ~/.local/bin /usr/local/bin $path)
