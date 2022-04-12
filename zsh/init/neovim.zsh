@@ -3,5 +3,6 @@
 alias v=nvim
 alias vo='nvim -c "normal '\''0"'
 alias vc='MDX_NVIM_MODE=coc nvim'
+alias rv='nvr -l'
 
 EDITOR=nvim
