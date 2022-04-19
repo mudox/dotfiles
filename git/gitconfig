@@ -1,16 +1,16 @@
 [user]
-name = mudox
-email = imudox@gmail.com
+name             = mudox
+email            = imudox@gmail.com
 
 [core]
-pager = delta
+pager            = delta
 excludesfile     = /Users/mudox/.dotfiles/git/cvsignore
-	editor = nvim
-autocrlf = input
+	editor   = nvim
+autocrlf         = input
 
 [diff]
-colorMoved = default
-tool = vscode
+colorMoved       = default
+tool             = vscode
 prompt           = No
 submodule        = log
 
@@ -28,8 +28,6 @@ br               = branch
 co               = checkout
 df               = diff
 ls               = ls-files
-ig               = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
-# interactive      = auto
 
 [color "branch"]
 current          = yellow reverse
@@ -82,34 +80,39 @@ user             = cempri@163.com
 ;proxy            = http://127.0.0.1:8888
 
 [mergetool]
-keepBackup = false
+keepBackup       = false
 
 [merge]
-conflictstyle = diff3
-tool = vscode
+conflictstyle    = diff3
+tool             = vscode
+
 [mergetool "vscode"]
-cmd = code --wait $MERGED
+cmd              = code --wait $MERGED
+
 [difftool "vscode"]
-cmd = code --wait --diff $LOCAL $REMOTE
+cmd              = code --wait --diff $LOCAL $REMOTE
+
 [credential]
-helper = osxkeychain
+helper           = osxkeychain
+
 [pull]
-rebase = true
+rebase           = true
+
 [init]
-defautBranch = main
-defaultBranch = main
+defautBranch     = main
+defaultBranch    = main
 
 [pager]
-diff = delta
-log = delta
-reflog = delta
-show = delta
+diff             = delta
+log              = delta
+reflog           = delta
+show             = delta
 
 [delta]
-plus-style = "syntax #012800"
-minus-style = "syntax #340001"
-syntax-theme = Monokai Extended
-navigate = true
+plus-style       = "syntax #012800"
+minus-style      = "syntax #340001"
+syntax-theme     = Monokai Extended
+navigate         = true
 
 [interactive]
-diffFilter = delta --color-only
+diffFilter       = delta --color-only
