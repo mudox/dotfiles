@@ -68,7 +68,7 @@ $env_var\
 $crystal\
 """
 
-# NOTE: use zsh hook `precmd` & `preexec to padding lines conditionally
+# Use zsh hook `precmd` & `preexec to padding lines conditionally
 add_newline = false
 
 scan_timeout = 30
@@ -87,7 +87,7 @@ disabled = true
 
 [fill]
 symbol = "―"
-style = "#303030"
+style = "#505050"
 
 [status]
 disabled = false
@@ -99,7 +99,7 @@ signal_symbol         = ''
 sigint_symbol         = ''
 not_found_symbol      = ''
 not_executable_symbol = ''
-success_symbol        = ' '
+success_symbol        = ''
 
 [jobs]
 symbol = ""
