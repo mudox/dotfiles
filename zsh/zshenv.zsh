@@ -1,7 +1,7 @@
-# proxy
+# Proxy
 source "${HOME}/.config/proxy"
 
-# global env
+# Global environments
 : ${MDX_GIT_DIR:="${HOME}/Git"}
 export -r MDX_GIT_DIR
 
@@ -20,18 +20,26 @@ export -r MDX_HS_DIR
 : ${MDX_DEV_DIR:="${HOME}/Develop"}
 export MDX_DEV_DIR
 
-# locale
+# Locale
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 
-# cargo
+# Cargo
 source "$HOME/.cargo/env"
 
-# homebrew
+# Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# path, fpath
+# `fpath`
 typeset -U fpath
 
+# `path`
 typeset -U path
-path=(~/.bin ~/.local/bin /usr/local/bin $path)
+path=(
+	~/.bin					# my binaries 
+	~/.local/bin		# pipx likes to put installed binaries here
+
+	/usr/local/bin  # macOS applications like to put commands here
+
+	$path
+)
