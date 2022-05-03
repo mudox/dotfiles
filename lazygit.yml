@@ -1,0 +1,21 @@
+gui:
+  showIcons: true
+  theme:
+    activeBorderColor:
+      - green
+      - bold
+    inactiveBorderColor:
+      - '#666'
+    # selectedLineBgColor:
+      # - '#999'
+    # selectedRangeBgColor:
+      # - white
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+os:
+  editCommand: nvim
+  editCommandTemplate: '{{editor}} +{{line}} -- {{filename}}'
+
+  openCommand: 'open {{filename}}'
