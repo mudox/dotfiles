@@ -1,118 +1,118 @@
 [user]
-name             = mudox
-email            = imudox@gmail.com
+    name             = Mudox
+    email            = imudox@gmail.com
 
 [core]
-pager            = delta
-excludesfile     = /Users/mudox/.dotfiles/git/cvsignore
-	editor   = nvim
-autocrlf         = input
+    pager            = delta
+    excludesfile     = /Users/mudox/.dotfiles/git/cvsignore
+    editor           = nvim
+    autocrlf         = input
 
 [diff]
-colorMoved       = default
-tool             = vscode
-prompt           = No
-submodule        = log
+    colorMoved       = default
+    tool             = vscode
+    prompt           = No
+    submodule        = log
 
 [color]
-diff             = auto
-status           = auto
-branch           = auto
-ui               = auto
+    diff             = auto
+    status           = auto
+    branch           = auto
+    ui               = auto
 
 [alias]
-lg               = log --color --graph --pretty=format:'%Cred%h%Creset %s %C(bold blue) by <%an> %Creset%C(dim green) (%cr) %Creset %C(yellow ul)%d%Creset'
-st               = status
-cm               = commit
-br               = branch
-co               = checkout
-df               = diff
-ls               = ls-files
+    lg               = log --color --graph --pretty=format:'%Cred%h%Creset %s %C(bold blue) by <%an> %Creset%C(dim green) (%cr) %Creset %C(yellow ul)%d%Creset'
+    st               = status
+    cm               = commit
+    br               = branch
+    co               = checkout
+    df               = diff
+    ls               = ls-files
 
 [color "branch"]
-current          = yellow reverse
-local            = yellow
-remote           = green
+    current          = yellow reverse
+    local            = yellow
+    remote           = green
 
 [color "diff"]
-meta             = yellow
-frag             = magenta
-plain            = white dim
-old              = red
-new              = green
-commit           = yellow
-func             = green dim
+    meta             = yellow
+    frag             = magenta
+    plain            = white dim
+    old              = red
+    new              = green
+    commit           = yellow
+    func             = green dim
 
 [color "status"]
-added            = yellow bold
-changed          = cyan
-untracked        = white dim
-branch           = green bold ul
+    added            = yellow bold
+    changed          = cyan
+    untracked        = white dim
+    branch           = green bold ul
 
 
 [status]
-relativePaths    = false
-submoduleSummary = true
+    relativePaths    = false
+    submoduleSummary = true
 
 [push]
-default          = simple
+    default          = simple
 
 [filter "media"]
-clean            = git-media-clean %f
-smudge           = git-media-smudge %f
+    clean            = git-media-clean %f
+    smudge           = git-media-smudge %f
 
 [filter "lfs"]
-clean            = git-lfs clean -- %f
-smudge           = git-lfs smudge -- %f
-required         = true
-process          = git-lfs filter-process
+    clean            = git-lfs clean -- %f
+    smudge           = git-lfs smudge -- %f
+    required         = true
+    process          = git-lfs filter-process
 
 [gui]
-recentrepo       = /Users/mudox/Git/neovim
+    recentrepo       = /Users/mudox/Git/neovim
 
 [github]
-user             = cempri@163.com
+    user             = cempri@163.com
 
-[http]
+;[http]
 ;proxy            = http://127.0.0.1:8888
 
-[https]
+;[https]
 ;proxy            = http://127.0.0.1:8888
 
 [mergetool]
-keepBackup       = false
+    keepBackup       = false
 
 [merge]
-conflictstyle    = diff3
-tool             = vscode
+    conflictstyle    = diff3
+    tool             = vscode
 
 [mergetool "vscode"]
-cmd              = code --wait $MERGED
+    cmd              = code --wait $MERGED
 
 [difftool "vscode"]
-cmd              = code --wait --diff $LOCAL $REMOTE
+    cmd              = code --wait --diff $LOCAL $REMOTE
 
 [credential]
-helper           = osxkeychain
+    helper           = osxkeychain
 
 [pull]
-rebase           = true
+    rebase           = true
 
 [init]
-defautBranch     = main
-defaultBranch    = main
+    defautBranch     = main
+    defaultBranch    = main
 
 [pager]
-diff             = delta
-log              = delta
-reflog           = delta
-show             = delta
+    diff             = delta
+    log              = delta
+    reflog           = delta
+    show             = delta
 
 [delta]
-plus-style       = "syntax #012800"
-minus-style      = "syntax #340001"
-syntax-theme     = Monokai Extended
-navigate         = true
+    plus-style       = "syntax #012800"
+    minus-style      = "syntax #340001"
+    syntax-theme     = Monokai Extended
+    navigate         = true
 
 [interactive]
-diffFilter       = delta --color-only
+    diffFilter       = delta --color-only
