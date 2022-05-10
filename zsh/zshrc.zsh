@@ -18,19 +18,20 @@ fi
 
 # path
 path=(
-	~/.bin 
-	~/.local/bin 
+	~/.bin						 # my bins
+	~/.bin/*(/)
 
-	~/.cargo/bin
+	~/.local/bin	     # pipx likes to put installed binaries here
 
-	~/.rbenv/shims
-	~/.pyenv/shims
-	~/.pyenv/shims/bin
+	~/.cargo/bin       # cargo
+	~/.rbenv/shims		 # rbenv
+	~/.pyenv/shims		 # pyenv
 
+	# Homebrew
 	/opt/homebrew/bin
 	/opt/homebrew/sbin
 
-	/usr/local/bin  # /Applications apps like to put cli here
+	/usr/local/bin		 # macOS applications like to put commands here
 
 	/usr/bin
 	/usr/sbin

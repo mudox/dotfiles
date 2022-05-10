@@ -37,7 +37,13 @@ typeset -U fpath
 typeset -U path
 path=(
 	~/.bin					# my binaries 
+	~/.bin/*(/)
+
 	~/.local/bin		# pipx likes to put installed binaries here
+
+	~/.rbenv/shims  # rbenv
+	~/.pyenv/shims  # pyenv
+	~/.cargo/bin    # cargo
 
 	/usr/local/bin  # macOS applications like to put commands here
 
