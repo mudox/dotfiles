@@ -1,5 +1,3 @@
-# vim: filetype=zsh
-
 MDX_BASE16_ROOT="${MDX_GIT_DIR}/base16-shell/scripts"
 
 if [[ ! -d "$MDX_BASE16_ROOT" ]]; then
