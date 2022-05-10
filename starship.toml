@@ -105,6 +105,7 @@ success_symbol        = ''
 symbol = ""
 
 [cmd_duration]
+format = " took [$duration]($style)"
 min_time = 2_000
 
 [package]
@@ -186,6 +187,7 @@ format = " via [$symbol($version)]($style)"
 symbol = '  '
 
 [time]
+format = " at [$time]($style)"
 disabled = false
 
 # format = '[$time]($style) '
