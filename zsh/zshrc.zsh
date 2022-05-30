@@ -21,6 +21,8 @@ path=(
 	~/.bin						 # my bins
 	~/.bin/*(/)
 
+	~/.mint/bin        # mint binaries
+
 	~/.local/bin	     # pipx likes to put installed binaries here
 
 	~/.cargo/bin       # cargo

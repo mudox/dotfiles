@@ -42,6 +42,8 @@ path=(
 	~/.bin					# my binaries 
 	~/.bin/*(/)
 
+	~/.mint/bin     # mint binaries
+
 	~/.local/bin		# pipx likes to put installed binaries here
 
 	~/.rbenv/shims  # rbenv
