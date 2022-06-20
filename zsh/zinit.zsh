@@ -40,10 +40,13 @@ zinit light-mode for \
 # Load plguins lazily
 () {
   local plugins=(
+
   djui/alias-tips
 
   rupa/z
-  # skywind3000/z.lua
+	
+	wfxr/forgit
+
   )
 
   for plug in $plugins; do
