@@ -1,6 +1,6 @@
-icon = " "
+icon = "􀀶 "
 
 # required
-title = "Inspect `$path`"
+title = "Zsh: inspect `$path`"
 
 description = "Print `$path` with common path colorized"

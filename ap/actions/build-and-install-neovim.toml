@@ -1,6 +1,6 @@
-icon = " "
+icon = "􀀯 "
 
 # required
-title = "Build & install neovim"
+title = "Neovim: build & install neovim"
 
 description = "Installed to ~/.bin/neovim"

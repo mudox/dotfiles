@@ -1,6 +1,6 @@
-icon = " "
+icon = "􀀲 "
 
 # required
-title = "Show infomation from `xcodebuild`"
+title = "Xcode: show infomation from `xcodebuild`"
 
 description = "SDKs, destinations"
