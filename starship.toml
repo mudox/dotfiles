@@ -129,9 +129,9 @@ truncation_length = 8
 # truncation_symbol = ""
 
 [git_commit]
-format = '[\($hash\)]($style) [$tag]($style)'
+format = '[\($hash\)]($style) [$tag]($style) '
 # commit_hash_length = 7
-# tag_symbol = "🔖 "
+tag_symbol = "  "
 only_detached = false
 
 [git_state]
