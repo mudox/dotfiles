@@ -28,3 +28,8 @@ alias p='print'
 
 # bindkey
 alias keys='bindkey | fzf --multi'
+
+# tuist
+alias tg='tuist generate'
+alias te='tuist edit'
+alias ts='tuist scaffold'
