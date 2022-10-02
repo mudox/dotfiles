@@ -12,8 +12,9 @@
 eval "$(starship init zsh)"
 
 # color
-if [[ -n $PS1 ]]; then
-  eval "$("${MDX_GIT_DIR}/base16-shell/profile_helper.sh")"
+if [[ -n $PS1 && -z $NVIM ]]; then
+  source "${MDX_GIT_DIR}/base16-shell/profile_helper.sh"
+  # base16_gruvbox-dark-hard
 fi
 
 # path
