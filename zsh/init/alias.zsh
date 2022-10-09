@@ -30,6 +30,8 @@ alias p='print'
 alias keys='bindkey | fzf --multi'
 
 # tuist
+alias tu='tuist'
 alias tg='tuist generate'
 alias te='tuist edit'
 alias ts='tuist scaffold'
+alias tw='tuist cache warm'
