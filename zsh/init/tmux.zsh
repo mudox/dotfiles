@@ -1,15 +1,15 @@
 # Envs
 export TMUX_AUTOQUIT=true
 
+# Aliases
+alias ta='tmux attach -t'
+
 tksv() {
   if [[ -n $TMUX ]]; then
     tmux detach-client
   fi
   tmux kill-server
 }
-
-# Aliases
-alias ta='tmux attach -t'
 
 tl() {
 	tmux list-panes -a -F '#S:#W.#P with #{pane_current_command}'
@@ -21,6 +21,8 @@ tkss() {
 	after="$(tl)"
 	BAT_STYLE='plain' batdiff <(echo "$before") <(echo "$after")
 }
+
+alias trp='tmux respawn-pane -k -c .'
  
 # Key bindings
 bindkey -r '^L'

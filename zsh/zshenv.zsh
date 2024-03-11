@@ -39,18 +39,18 @@ typeset -U fpath
 # `path`
 typeset -U path
 path=(
-	~/.bin					# my binaries 
-	~/.bin/*(/)
+    ~/.bin         # my binaries
+    ~/.bin/*(/)
 
-	~/.mint/bin     # mint binaries
+    ~/.mint/bin    # mint binaries
 
-	~/.local/bin		# pipx likes to put installed binaries here
+    ~/.local/bin   # pipx likes to put installed binaries here
 
-	~/.rbenv/shims  # rbenv
-	~/.pyenv/shims  # pyenv
-	~/.cargo/bin    # cargo
+    ~/.rbenv/shims # rbenv
+    ~/.pyenv/shims # pyenv
+    ~/.cargo/bin   # cargo
 
-	/usr/local/bin  # macOS applications like to put commands here
+    /usr/local/bin # macOS applications like to put commands here
 
-	$path
+    $path
 )

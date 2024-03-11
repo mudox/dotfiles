@@ -1,16 +1,70 @@
 {
-  "title": "Terminals Common Settings",
+  "title": "Terminals",
   "rules": [
     {
-      "description": "[Term] - Swap Command and Ctrl",
+      "description": "[Terminal] - Left Control -> Option",
       "manipulators": [
         {
           "conditions": [
             {
               "bundle_identifiers": [
-                "^com\\.googlecode\\.iterm2$",
+                "^org\\.alacritty$",
+                "^com\\.github\\.wez\\.wezterm$"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "left_control",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_option"
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^org\\.alacritty$"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "right_control",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_option"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "[Terminal] - Swap Command & Control",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": [
                 "^net\\.kovidgoyal\\.kitty$",
-                "^io\\.alacritty$"
+                "^org\\.alacritty$",
+                "^com\\.github\\.wez\\.wezterm$"
               ],
               "type": "frontmost_application_if"
             }
@@ -34,9 +88,7 @@
           "conditions": [
             {
               "bundle_identifiers": [
-                "^com\\.googlecode\\.iterm2$",
-                "^net\\.kovidgoyal\\.kitty$",
-                "^io\\.alacritty$"
+                "^net\\.kovidgoyal\\.kitty$"
               ],
               "type": "frontmost_application_if"
             }
@@ -60,9 +112,9 @@
           "conditions": [
             {
               "bundle_identifiers": [
-                "^com\\.googlecode\\.iterm2$",
                 "^net\\.kovidgoyal\\.kitty$",
-                "^io\\.alacritty$"
+                "^org\\.alacritty$",
+                "^com\\.github\\.wez\\.wezterm$"
               ],
               "type": "frontmost_application_if"
             }
@@ -86,9 +138,9 @@
           "conditions": [
             {
               "bundle_identifiers": [
-                "^com\\.googlecode\\.iterm2$",
                 "^net\\.kovidgoyal\\.kitty$",
-                "^io\\.alacritty$"
+                "^org\\.alacritty$",
+                "^com\\.github\\.wez\\.wezterm$"
               ],
               "type": "frontmost_application_if"
             }
@@ -111,15 +163,15 @@
       ]
     },
     {
-      "description": "[Term] - Restore Command + Tab",
+      "description": "[Terminal] - Restore Command + Tab",
       "manipulators": [
         {
           "conditions": [
             {
               "bundle_identifiers": [
-                "^com\\.googlecode\\.iterm2$",
                 "^net\\.kovidgoyal\\.kitty$",
-                "^io\\.alacritty$"
+                "^org\\.alacritty$",
+                "^com\\.github\\.wez\\.wezterm$"
               ],
               "type": "frontmost_application_if"
             }

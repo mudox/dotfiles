@@ -5,7 +5,7 @@
 [core]
     pager            = delta
     excludesfile     = /Users/mudox/.dotfiles/git/cvsignore
-    editor           = nvim
+	editor = nvim
     autocrlf         = input
 
 [diff]

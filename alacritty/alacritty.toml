@@ -1,0 +1,18 @@
+[font]
+size = 12.0
+
+[font.normal]
+family = "Iosevka Nerd Font"
+
+[window]
+decorations = "none"
+dynamic_padding = true
+dynamic_title = false
+option_as_alt = "Both"
+resize_increments = true
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.padding]
+x = 0
+y = 0

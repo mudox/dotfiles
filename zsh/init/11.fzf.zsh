@@ -1,25 +1,30 @@
+# vim: fml& fdn& fdm=marker fmr=〈,〉
+
 if [[ ! -o interactive ]]; then
-  return
+    return
 fi
 
-#export FZF_DEFAULT_COMMAND='ag --nocolor -l -g ""'
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_COMPLETION_TRIGGER=',,'
 export FZF_COMPLETION_OPTS='-e'
 export FZF_DEFAULT_OPTS='
---height=70%
+--height=50%
 --min-height=40
 --layout=reverse
 --info=inline
---pointer=▶
---border=rounded --margin=1 --padding=1
+ --prompt="󰅂 " 
+--pointer=
+--border=none --margin=1 --padding=1
+--no-scrollbar
 --bind=ctrl-f:page-down,ctrl-b:page-up
 --select-1
 '
 
-zinit snippet 'https://raw.githubusercontent.com/fnune/base16-fzf/master/bash/base16-gruvbox-dark-hard.config'
-
-FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color=gutter:-1,bg+:-1"
+export FZF_DEFAULT_OPTS=${FZF_DEFAULT_OPTS}'
+	--color=fg:#c0caf5,bg:#232436,gutter:#232436,hl:#bb9af7
+	--color=fg+:#ffffff,bg+:#1a1b26,hl+:#7dcfff
+	--color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff 
+	--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 # command for listing path candidates.
@@ -38,7 +43,8 @@ if [[ "$SHELL" == "bash" ]]; then
   return
 fi
 
-# ^R to paste the selected command from history into the command line.                                           {{{1
+# ^R to paste the selected command from history into the command line.                                           〈
+
 # press ^R in the fzf UI to apply sort
 fzf-history-widget() {
   local selected restore_no_bang_hist
@@ -54,9 +60,11 @@ fzf-history-widget() {
 
 zle -N fzf-history-widget
 bindkey '^R' fzf-history-widget
-# }}}1
 
-# ^Tf to insert file & paths under $(pwd) to the command line.                                                   {{{1
+# 〉
+
+# ^Tf to insert file & paths under $(pwd) to the command line.                                                   〈
+
 __fsel() {
   set -o nonomatch
   command find ./* -path '*/\.*' -prune \
@@ -75,9 +83,11 @@ fzf-file-widget() {
 
 zle -N fzf-file-widget
 bindkey '^Tf' fzf-file-widget
-# }}}1
 
-# ^Tj to insert paths from $(z -l) to the command line.                                                          {{{1
+# 〉
+
+# ^Tj to insert paths from $(z -l) to the command line.                                                          〈
+
 __zdirs() {
   set -o nonomatch
   z -l | sed 's/[0-9.,]* *//' | fzf -m -e | while read item; do
@@ -93,35 +103,11 @@ mudox-zsh-widget-zdirs() {
 
 zle -N mudox-zsh-widget-zdirs
 bindkey '^Tj' mudox-zsh-widget-zdirs
-# }}}1
 
-# ^[j to cd to one of the paths in $(z -l).                                                                      {{{1
-mudox-zsh-widget-j() {
-  if [[ -z "$(whence z)" ]]; then
-    printf "\e[31mneed z, quit...\e[0m\n"
-    return
-  fi
+# 〉
 
-  local target_dir
-  target_dir=$(
-    z -l | sed 's/[0-9.,]* *//' |
-      fzf \
-        --tiebreak=end,length \
-        --margin=2 \
-        --select-1 \
-        --exit-0
-  )
+# ^[k to cd to one of directory under current path.                                                              〈
 
-  [ -n "$target_dir" ] && cd "$target_dir"
-
-  zle reset-prompt
-}
-
-zle -N mudox-zsh-widget-j
-bindkey '^[j' mudox-zsh-widget-j
-#}}}1
-
-# ^[k to cd to one of directory under current path.                                                              {{{1
 # do not descend into hidden directories.
 mudox-zsh-widget-c() {
   local target_dir
@@ -143,9 +129,11 @@ mudox-zsh-widget-c() {
 
 zle -N mudox-zsh-widget-c
 bindkey '^[k' mudox-zsh-widget-c
-#}}}1
 
-# fe [pattern] to open the selected file with the gvim in tab.                                                   {{{1
+# 〉
+
+# fe [pattern] to open the selected file with the gvim in tab.                                                   〈
+
 fe() {
   local file
   file=$(
@@ -186,158 +174,20 @@ fe() {
   else
     [ -n "$file" ] && "${vim_bin}" --remote-tab-silent "$file"
   fi
-} #}}}1
+}
 
-# fkill to select & kill procces.                                                                                {{{1
+# 〉
+
+# fkill to select & kill procces.                                                                                〈
+
 fkill() {
   ps -axo pid,command |
     sed '1d' |
     fzf --multi --nth=2 --extended-exact |
     awk '{print $1}' |
     xargs kill -"${1:-9}"
-} #}}}1
+} 
 
-# cmake help selection.                                                                                          {{{1
+# 〉
 
-# cmake helps                                                                                                    {{{2
-cmh() {
-  local category
-  local usage="\
-    usage: $0 <c|ma|mo|po|pr|v> [selection]
-  where
-  c  - command
-  ma - manual
-  mo - module
-  po - policy
-  pr - property
-  v  - variable"
-
-  if [[ "$#" -eq 0 ]]; then
-    local categories="command\nmanual\nmodule\npolicy\nproperty\nvariable"
-
-    category=$(echo ${categories} | fzf \
-      --query="$2" \
-      --select-1 \
-      --extended-exact \
-      --prompt="cmake help category: ")
-
-    if [[ -z "${category}" ]]; then
-      return
-    fi
-  else
-    case "$1" in
-    c)
-      category="command"
-      ;;
-    ma)
-      category="manual"
-      ;;
-    mo)
-      category="module"
-      ;;
-    po)
-      category="policy"
-      ;;
-    pr)
-      category="property"
-      ;;
-    v)
-      category="variable"
-      ;;
-    *)
-      printf "\e[31m%s: invalid first argument\e[0m\n" "$0"
-      echo "${usage}"
-      return
-      ;;
-    esac
-  fi
-
-  local selection
-  selection=$(cmake --help-${category}-list |
-    sed '1d' | sort | uniq |
-    fzf \
-      --query="$2" \
-      --select-1 \
-      --extended-exact \
-      --prompt="cmake help ${category}: ")
-  if [[ -n "${selection}" ]]; then
-    cmake "--help-${category}" "${selection}" | less
-  fi
-}
-# }}}2
-
-# ctest helps                                                                                                    {{{2
-# NOTE: just a copy of cmh() above, with all 'cmake' replaced with 'ctest'.
-cth() {
-  local category
-  local usage="\
-    usage: $0 <c|ma|mo|po|pr|v> [selection]
-  where
-  c  - command
-  ma - manual
-  mo - module
-  po - policy
-  pr - property
-  v  - variable"
-
-  if [[ "$#" -eq 0 ]]; then
-    local categories="command\nmanual\nmodule\npolicy\nproperty\nvariable"
-
-    category=$(echo ${categories} | fzf \
-      --query="$2" \
-      --select-1 \
-      --extended-exact \
-      --prompt="ctest help category: ")
-
-    if [[ -z "${category}" ]]; then
-      return
-    fi
-  else
-    case "$1" in
-    c)
-      category="command"
-      ;;
-    ma)
-      category="manual"
-      ;;
-    mo)
-      category="module"
-      ;;
-    po)
-      category="policy"
-      ;;
-    pr)
-      category="property"
-      ;;
-    v)
-      category="variable"
-      ;;
-    *)
-      printf "\e[31m%s: invalid first argument\e[0m\n" "$0"
-      echo "${usage}"
-      return
-      ;;
-    esac
-  fi
-
-  local selection
-  selection=$(ctest --help-${category}-list |
-    sed '1d' | sort | uniq |
-    fzf \
-      --query="$2" \
-      --select-1 \
-      --extended-exact \
-      --prompt="ctest help ${category}: ")
-
-  if [[ -n "${selection}" ]]; then
-    ctest "--help-${category}" "${selection}" | less
-  fi
-}
-# }}}2
-
-# }}}1
-
-# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# vim: filetype=zsh foldmethod=marker

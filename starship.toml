@@ -24,49 +24,49 @@ $status\
 $shell\
 $character"""
 
-right_format = """
-$package\
-$cmake\
-$cobol\
-$dart\
-$deno\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$golang\
-$helm\
-$java\
-$julia\
-$kotlin\
-$lua\
-$nim\
-$nodejs\
-$ocaml\
-$perl\
-$php\
-$pulumi\
-$purescript\
-$python\
-$rlang\
-$red\
-$ruby\
-$rust\
-$scala\
-$terraform\
-$vlang\
-$vagrant\
-$zig\
-$nix_shell\
-$conda\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$env_var\
-$crystal\
-"""
-
+# right_format = """
+# $package\
+# $cmake\
+# $cobol\
+# $dart\
+# $deno\
+# $dotnet\
+# $elixir\
+# $elm\
+# $erlang\
+# $golang\
+# $helm\
+# $java\
+# $julia\
+# $kotlin\
+# $lua\
+# $nim\
+# $nodejs\
+# $ocaml\
+# $perl\
+# $php\
+# $pulumi\
+# $purescript\
+# $python\
+# $rlang\
+# $red\
+# $ruby\
+# $rust\
+# $scala\
+# $terraform\
+# $vlang\
+# $vagrant\
+# $zig\
+# $nix_shell\
+# $conda\
+# $memory_usage\
+# $aws\
+# $gcloud\
+# $openstack\
+# $env_var\
+# $crystal\
+# """
+#
 # Use zsh hook `precmd` & `preexec to padding lines conditionally
 add_newline = false
 
@@ -188,5 +188,12 @@ symbol = '  '
 [time]
 format = " at [$time]($style)"
 disabled = false
+
+[shell]
+disabled = false
+zsh_indicator = ""
+nu_indicator = "􀂯  "
+style = "green bold"
+format = "[$indicator]($style)"
 
 # format = '[$time]($style) '

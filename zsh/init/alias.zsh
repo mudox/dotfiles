@@ -9,7 +9,7 @@ alias ez='exec zsh'
 
 # list options
 alias opts='for k v in ${(@kv)options}; do
-  printf "%-30s%s\n" $k $v
+    printf "%-30s%s\n" $k $v
 done | fzf --multi'
 
 # list commands
@@ -35,3 +35,7 @@ alias tg='tuist generate'
 alias te='tuist edit'
 alias ts='tuist scaffold'
 alias tw='tuist cache warm'
+
+# just
+alias j=just
+alias jc='just --choose'

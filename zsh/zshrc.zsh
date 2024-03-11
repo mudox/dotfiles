@@ -2,44 +2,48 @@
 
 # configs
 () {
-  local dir=${MDX_DOT_DIR}/zsh
-  source "${dir}/zinit.zsh"
-  source "${dir}/ohmyzsh.zsh"
-  source "${dir}/custom.zsh"
+    local dir=${MDX_DOT_DIR}/zsh
+    source "${dir}/zinit.zsh"
+    source "${dir}/ohmyzsh.zsh"
+    source "${dir}/custom.zsh"
 }
 
 # prompt
 eval "$(starship init zsh)"
 
-# color
-if [[ -n $PS1 && -z $NVIM ]]; then
-  source "${MDX_GIT_DIR}/base16-shell/profile_helper.sh"
-  # base16_gruvbox-dark-hard
-fi
-
 # path
 path=(
-	~/.bin						 # my bins
-	~/.bin/*(/)
+    ~/.bin                  # my bins
+    ~/.bin/*(/)
 
-	~/.mint/bin        # mint binaries
+    ~/.mint/bin             # mint binaries
 
-	~/.local/bin	     # pipx likes to put installed binaries here
+    ~/.local/bin            # pipx likes to put installed binaries here
 
-	~/.cargo/bin       # cargo
-	~/.rbenv/shims		 # rbenv
-	~/.pyenv/shims		 # pyenv
+    ~/.cargo/bin            # cargo
+    ~/.rbenv/shims          # rbenv
+    ~/.pyenv/shims          # pyenv
 
-	# Homebrew
-	/opt/homebrew/bin
-	/opt/homebrew/sbin
+    # Homebrew
+    /opt/homebrew/bin
+    /opt/homebrew/sbin
 
-	/usr/local/bin		 # macOS applications like to put commands here
+    /usr/local/bin          # macOS applications like to put commands here
 
-	/usr/bin
-	/usr/sbin
-	/bin
-	/sbin
+    /usr/bin
+    /usr/sbin
+    /bin
+    /sbin
 
-	$path
+    $path
 )
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+# broot
+source /Users/mudox/.config/broot/launcher/bash/br
+
+# pnpm
+export PNPM_HOME="/Users/mudox/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
