@@ -1,48 +1,52 @@
 #  vim: fdm=marker fmr=〈,〉
 
-# configs
-() {
-    local dir=${MDX_DOT_DIR}/zsh
-    source "${dir}/zinit.zsh"
-    source "${dir}/ohmyzsh.zsh"
-    source "${dir}/custom.zsh"
-}
+# zinit
+source "${MDX_DOT_DIR}/zsh/zinit.zsh"
+source "${MDX_DOT_DIR}/zsh/ohmyzsh.zsh"
+source "${MDX_DOT_DIR}/zsh/custom.zsh"
 
 # prompt
 eval "$(starship init zsh)"
 
 # path
 path=(
-    ~/.bin                  # my bins
-    ~/.bin/*(/)
+	# my
+	~/.bin
+	~/.bin/*(/)
 
-    ~/.mint/bin             # mint binaries
+	# shims
+	~/.rbenv/shims            # rbenv
+	~/.pyenv/shims            # pyenv
+	~/.local/share/mise/shims # mise
 
-    ~/.local/bin            # pipx likes to put installed binaries here
+	~/.cargo/bin # cargo
 
-    ~/.cargo/bin            # cargo
-    ~/.rbenv/shims          # rbenv
-    ~/.pyenv/shims          # pyenv
+	~/.local/bin   # pipx likes to put installed binaries here
+	/usr/local/bin # macOS applications like to put commands here
 
-    # Homebrew
-    /opt/homebrew/bin
-    /opt/homebrew/sbin
+	# Homebrew
+	/opt/homebrew/bin
+	/opt/homebrew/sbin
 
-    /usr/local/bin          # macOS applications like to put commands here
+	# system
+	/usr/bin
+	/usr/sbin
+	/bin
+	/sbin
 
-    /usr/bin
-    /usr/sbin
-    /bin
-    /sbin
-
-    $path
+	$path
 )
 
 # zoxide
-eval "$(zoxide init zsh)"
+if [[ -z $DID_INIT_ZOXIDE ]]; then
+	export DID_INIT_ZOXIDE=1
+
+	export _ZO_ECHO=1
+	eval "$(zoxide init zsh)"
+fi
 
 # broot
-source /Users/mudox/.config/broot/launcher/bash/br
+# source /Users/mudox/.config/broot/launcher/bash/br
 
 # pnpm
 export PNPM_HOME="/Users/mudox/Library/pnpm"

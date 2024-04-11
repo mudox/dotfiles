@@ -2,26 +2,28 @@
 set -euo pipefail
 # set -x
 
-TAR="nvim-macos.tar.gz"
-URL="https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz"
+TAR="nvim-macos-arm64.tar.gz"
+URL="https://github.com/neovim/neovim/releases/download/nightly/$TAR"
 BAK="nvim-nightly-backup/$(date '+%Y-%m-%d')"
 
 cd ~/.bin
+rm "$TAR" &>/dev/null
 
 # downlaod
-wget "$URL" -q --show-progress
+wget "$URL" --show-progress --verbose
 
 # extract
-tar xzf "$TAR"
+xattr -c "$TAR"
+tar xzvf "$TAR"
 
 # backup old version
 set +e
 rm "$TAR"
 mkdir nvim-nightly-backup &>/dev/null
 if [[ ! -d $BAK ]]; then
-    mv nvim-nightly "$BAK"
+	mv nvim-nightly "$BAK"
 fi
-set e
+set -e
 
 # install
-mv nvim-macos nvim-nightly && nvim -V1 -v
+mv "${TAR%.tar.gz}" nvim-nightly && nvim -V1 -v

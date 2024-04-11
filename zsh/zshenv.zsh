@@ -30,6 +30,9 @@ source "$HOME/.cargo/env"
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Python
+source "${MDX_DOT_DIR}/zsh/zshenv/python.zsh"
+
 # Java
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
@@ -39,18 +42,19 @@ typeset -U fpath
 # `path`
 typeset -U path
 path=(
-    ~/.bin         # my binaries
-    ~/.bin/*(/)
+	# my
+	~/.bin
+	~/.bin/*(/)
 
-    ~/.mint/bin    # mint binaries
+	# shims
+	~/.rbenv/shims            # rbenv
+	~/.pyenv/shims            # pyenv
+	~/.local/share/mise/shims # mise
 
-    ~/.local/bin   # pipx likes to put installed binaries here
+	~/.cargo/bin # cargo
 
-    ~/.rbenv/shims # rbenv
-    ~/.pyenv/shims # pyenv
-    ~/.cargo/bin   # cargo
+	~/.local/bin   # pipx likes to put installed binaries here
+	/usr/local/bin # macOS applications like to put commands here
 
-    /usr/local/bin # macOS applications like to put commands here
-
-    $path
+	$path
 )

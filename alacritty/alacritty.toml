@@ -1,18 +1,35 @@
-[font]
-size = 12.0
+import = [
+  "~/.local/share/nvim/lazy/tokyonight.nvim/extras/alacritty/tokyonight_moon.toml" 
+]
 
-[font.normal]
-family = "Iosevka Nerd Font"
+shell = "/Users/mudox/.bin/tmux"
+
+[font]
+size = 12.2
+
+normal = { family = "IosevkaTerm Nerd Font Propo" }
+bold = { style = "SemiBold" }
+bold_italic = { style = "SemiBold Italic" }
+
+# offset = { x = 0, y = 0 }
+# glyph_offset = { x = 0, y = 0 }
+
+builtin_box_drawing = false
 
 [window]
-decorations = "none"
-dynamic_padding = true
-dynamic_title = false
-option_as_alt = "Both"
-resize_increments = true
-startup_mode = "Windowed"
-title = "Alacritty"
+decorations = "None"
 
-[window.padding]
-x = 0
-y = 0
+padding = { x = 3, y = 0 }
+dynamic_padding = true
+
+opacity = 0.95
+blur = false
+
+resize_increments = true # resize by stepping in cell dimensions
+
+startup_mode = "Windowed"
+
+title = "Alacritty"
+dynamic_title = false
+
+option_as_alt = "Both"
