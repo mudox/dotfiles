@@ -1,3 +1,2 @@
-tmux/plugins/
-/karabiner/automatic_backups
-.vim/coc-settings.json
+/karabiner/automatic_backups/
+/nushell/history.txt

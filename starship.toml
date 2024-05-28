@@ -93,11 +93,11 @@ disabled = false
 format = '[$symbol $int ($common_meaning )(\($signal_number\))($signal_name )]($style)'
 
 map_symbol = true
-symbol                = ''
-signal_symbol         = ''
-sigint_symbol         = ''
-not_found_symbol      = ''
-not_executable_symbol = ''
+symbol                = '󰉁'
+signal_symbol         = '󰉁'
+sigint_symbol         = '󰉁'
+not_found_symbol      = '󰉁'
+not_executable_symbol = '󰉁'
 success_symbol        = ''
 
 [jobs]
@@ -179,7 +179,7 @@ symbol = ' '
 
 [rust]
 format = " via [$symbol($version)]($style)"
-symbol = '🆁  '
+symbol = '󱘗 '
 
 [ruby]
 format = " via [$symbol($version)]($style)"
@@ -192,7 +192,7 @@ disabled = false
 [shell]
 disabled = false
 zsh_indicator = ""
-nu_indicator = "􀂯  "
+nu_indicator = ""
 style = "green bold"
 format = "[$indicator]($style)"
 

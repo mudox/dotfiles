@@ -6,15 +6,18 @@ TAR="nvim-macos-arm64.tar.gz"
 URL="https://github.com/neovim/neovim/releases/download/nightly/$TAR"
 BAK="nvim-nightly-backup/$(date '+%Y-%m-%d')"
 
+# clean
 cd ~/.bin
+set +e
 rm "$TAR" &>/dev/null
+set -e
 
 # downlaod
 wget "$URL" --show-progress --verbose
 
 # extract
 xattr -c "$TAR"
-tar xzvf "$TAR"
+tar xzf "$TAR"
 
 # backup old version
 set +e
@@ -26,4 +29,4 @@ fi
 set -e
 
 # install
-mv "${TAR%.tar.gz}" nvim-nightly && nvim -V1 -v
+mv "${TAR%.tar.gz}" nvim-nightly && ./nvim-nightly/bin/nvim -V1 -v

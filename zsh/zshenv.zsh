@@ -58,3 +58,5 @@ path=(
 
 	$path
 )
+
+export EDITOR=nvim

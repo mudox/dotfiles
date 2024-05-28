@@ -4,12 +4,16 @@ import = [
 
 shell = "/Users/mudox/.bin/tmux"
 
+[env]
+TERM = "xterm-256color"
+
 [font]
 size = 12.2
 
 normal = { family = "IosevkaTerm Nerd Font Propo" }
-bold = { style = "SemiBold" }
-bold_italic = { style = "SemiBold Italic" }
+italic = { style = "Oblique" }
+bold = { style = "Medium" }
+bold_italic = { style = "Medium Oblique" }
 
 # offset = { x = 0, y = 0 }
 # glyph_offset = { x = 0, y = 0 }
@@ -22,8 +26,8 @@ decorations = "None"
 padding = { x = 3, y = 0 }
 dynamic_padding = true
 
-opacity = 0.95
-blur = false
+# opacity = 0.95
+# blur = false
 
 resize_increments = true # resize by stepping in cell dimensions
 
@@ -33,3 +37,47 @@ title = "Alacritty"
 dynamic_title = false
 
 option_as_alt = "Both"
+
+[keyboard]
+bindings = [
+# Key combos
+
+# - https://www.youtube.com/watch?v=lHBD6pdJ-Ng
+# - http://www.leonerd.org.uk/hacks/fixterms/
+# - https://en.wikipedia.org/wiki/List_of_Unicode_characters
+# - https://sw.kovidgoyal.net/kitty/keyboard-protocol/#functional-key-definitions
+
+# syntax: \x1b[ + {codepoint} + ; + {combo} + u
+# shift       - 2
+# alt         - 3
+# ctrl        - 5
+# ctrl+shift  - 6
+
+# shift
+
+{ key = "Return", mods = "Shift",         chars = "\u001b[13;2u"  },
+
+# ctrl
+# { key = "i",      mods = "Control",       chars = "\u001b[69;5u"  },
+
+{ key = ",",      mods = "Control",       chars = "\u001b[44;5u"  },
+{ key = "-",      mods = "Control",       chars = "\u001b[45;5u"  },
+{ key = "/",      mods = "Control",       chars = "\u001b[47;5u"  },
+{ key = ";",      mods = "Control",       chars = "\u001b[59;5u"  },
+{ key = "Return", mods = "Control",       chars = "\u001b[13;5u"  },
+
+# ctrl+shift
+
+{ key = "Return", mods = "Control|Shift", chars = "\u001b[13;6u"  },
+
+{ key = ";",      mods = "Control|Shift", chars = "\u001b[59;6u"  },
+{ key = "[",      mods = "Control|Shift", chars = "\u001b[91;6u"  },
+{ key = "]",      mods = "Control|Shift", chars = "\u001b[93;6u"  },
+
+{ key = "h",      mods = "Control|Shift", chars = "\u001b[72;6u"  },
+{ key = "j",      mods = "Control|Shift", chars = "\u001b[74;6u"  },
+{ key = "k",      mods = "Control|Shift", chars = "\u001b[75;6u"  },
+{ key = "l",      mods = "Control|Shift", chars = "\u001b[76;6u"  },
+{ key = "o",      mods = "Control|Shift", chars = "\u001b[111;6u" },
+{ key = "p",      mods = "Control|Shift", chars = "\u001b[112;6u" },
+]

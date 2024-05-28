@@ -42,3 +42,8 @@ alias jc='just --choose'
 
 # lua
 alias lr='luarocks'
+
+# neovim
+alias vim=nvim
+alias v=nvim
+alias rv='nvr -l'

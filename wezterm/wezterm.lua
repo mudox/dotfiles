@@ -2,12 +2,12 @@ local wz = require("wezterm")
 
 local config = wz.config_builder()
 
-config.font = wz.font("Iosevka Nerd Font")
+config.font = wz.font("IosevkaTerm Nerd Font Propo")
 
-config.color_scheme = "AdventureTime"
+config.color_scheme = "Tokyo Night Moon"
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.9
 
 config.enable_tab_bar = false
 
