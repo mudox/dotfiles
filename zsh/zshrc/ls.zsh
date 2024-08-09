@@ -1,7 +1,7 @@
-export EXA_ICON_SPACING=2
+export EZA_ICON_SPACING=2
 
-# use `exa` instead of `ls`
-alias l="exa --classify --group-directories-first --icons"
+# use `eza` instead of `ls`
+alias l="eza --classify --group-directories-first --icons"
 alias ls=l
 alias tree='l --tree'
 alias l1='l --oneline'

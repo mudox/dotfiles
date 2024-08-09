@@ -1,7 +1,6 @@
 format = """
 $username\
 $hostname\
-$shlvl\
 $singularity\
 $kubernetes\
 $directory\
@@ -21,6 +20,7 @@ $line_break\
 $jobs\
 $battery\
 $status\
+$shlvl\
 $shell\
 $character"""
 
@@ -117,9 +117,9 @@ truncate_to_repo = true
 fish_style_pwd_dir_length = 1
 
 [shlvl]
-disabled = false
-threshold = 5
-symbol = '\$'
+disabled = true
+threshold = 3
+symbol = '󰄷 '
 
 [git_branch]
 format = '[$branch]($style) '
@@ -191,9 +191,9 @@ disabled = false
 
 [shell]
 disabled = false
-zsh_indicator = ""
-nu_indicator = ""
-style = "green bold"
-format = "[$indicator]($style)"
+# zsh_indicator = "󰰒"
+# nu_indicator = "󰰶"
+# style = "green bold"
+# format = "[$indicator]($style)"
 
 # format = '[$time]($style) '

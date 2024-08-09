@@ -39,24 +39,28 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 # `fpath`
 typeset -U fpath
 
+# Neovim
+export EDITOR=nvim
+
+# Rust
+export RUST_BACKTRACE=1
+
 # `path`
 typeset -U path
 path=(
-	# my
-	~/.bin
-	~/.bin/*(/)
+  # my
+  ~/.bin
+  ~/.bin/*(/)
 
-	# shims
-	~/.rbenv/shims            # rbenv
-	~/.pyenv/shims            # pyenv
-	~/.local/share/mise/shims # mise
+  # shims
+  ~/.rbenv/shims            # rbenv
+  ~/.pyenv/shims            # pyenv
+  ~/.local/share/mise/shims # mise
 
-	~/.cargo/bin # cargo
+  ~/.cargo/bin # cargo
 
-	~/.local/bin   # pipx likes to put installed binaries here
-	/usr/local/bin # macOS applications like to put commands here
+  ~/.local/bin   # pipx likes to put installed binaries here
+  /usr/local/bin # macOS applications like to put commands here
 
-	$path
+  $path
 )
-
-export EDITOR=nvim

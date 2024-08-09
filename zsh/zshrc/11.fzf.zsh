@@ -17,8 +17,8 @@ export FZF_DEFAULT_OPTS='
 --min-height=40
 --layout=reverse
 --info=inline
- --prompt="󰅂 "
---pointer=
+--prompt="󰅂 "
+--pointer=┃
 --border=none --margin=1 --padding=1
 --no-scrollbar
 --bind=ctrl-f:page-down,ctrl-b:page-up
