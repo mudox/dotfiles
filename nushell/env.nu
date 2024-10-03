@@ -1,4 +1,4 @@
-$env.EDITOR = nvim
+$env.EDITOR = 'nvim'
 
 $env.NU_LIB_DIRS = [ ~/.dotfiles/nushell/lib ]
 

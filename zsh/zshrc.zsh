@@ -10,39 +10,39 @@ eval "$(starship init zsh)"
 
 # path
 path=(
-	# my
-	~/.bin
-	~/.bin/*(/)
+  # my
+  ~/.bin
+  ~/.bin/*(/)
 
-	# shims
-	~/.rbenv/shims            # rbenv
-	~/.pyenv/shims            # pyenv
-	~/.local/share/mise/shims # mise
+  # shims
+  ~/.rbenv/shims            # rbenv
+  ~/.pyenv/shims            # pyenv
+  ~/.local/share/mise/shims # mise
 
-	~/.cargo/bin # cargo
+  ~/.cargo/bin # cargo
 
-	~/.local/bin   # pipx likes to put installed binaries here
-	/usr/local/bin # macOS applications like to put commands here
+  ~/.local/bin   # pipx likes to put installed binaries here
+  /usr/local/bin # macOS applications like to put commands here
 
-	# Homebrew
-	/opt/homebrew/bin
-	/opt/homebrew/sbin
+  # Homebrew
+  /opt/homebrew/bin
+  /opt/homebrew/sbin
 
-	# system
-	/usr/bin
-	/usr/sbin
-	/bin
-	/sbin
+  # system
+  /usr/bin
+  /usr/sbin
+  /bin
+  /sbin
 
-	$path
+  $path
 )
 
 # zoxide
 if [[ -z $DID_INIT_ZOXIDE ]]; then
-	export DID_INIT_ZOXIDE=1
+  export DID_INIT_ZOXIDE=1
 
-	export _ZO_ECHO=1
-	eval "$(zoxide init zsh)"
+  export _ZO_ECHO=1
+  eval "$(zoxide init zsh)"
 fi
 
 # broot

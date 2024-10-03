@@ -5,7 +5,8 @@
 
 font_size 12.0
 
-font_family       IosevkaTerm Nerd Font Light
+# font_family       IosevkaTerm Nerd Font Light 
+font_family       UbuntuMono Nerd Font
 bold_font         IosevkaTerm Nerd Font
 italic_font       IosevkaTerm Nerd Font Light Oblique
 bold_italic_font  IosevkaTerm Nerd Font Oblique
@@ -16,6 +17,7 @@ modify_font cell_height -7px
 modify_font baseline 3.5
 
 modify_font underline_position 3
+# modify_font strikethrough_position
 
 # experiment
 box_drawing_scale 0.001, 1, 1.5, 2

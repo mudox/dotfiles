@@ -1,4 +1,4 @@
-$env.config.edit_mode = emacs
+$env.config.edit_mode = 'emacs'
 
 $env.config.keybindings = [
   # clear screen

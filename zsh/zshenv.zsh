@@ -34,7 +34,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 source "${MDX_DOT_DIR}/zsh/zshenv/python.zsh"
 
 # Java
-export JAVA_HOME="$(/usr/libexec/java_home)"
+# export JAVA_HOME="$(/usr/libexec/java_home)"
 
 # `fpath`
 typeset -U fpath

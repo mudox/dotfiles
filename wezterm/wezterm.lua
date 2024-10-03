@@ -2,7 +2,7 @@ local wz = require("wezterm")
 
 local config = wz.config_builder()
 
-config.font = wz.font("IosevkaTerm Nerd Font Propo")
+config.font = wz.font("IosevkaTerm Nerd Font")
 
 config.color_scheme = "Tokyo Night Moon"
 
