@@ -11,4 +11,5 @@ jack info Alacritty
 cp -av ~/Git/kitty-icon/kitty-light.icns /Applications/Alacritty.app/Contents/Resources/alacritty.icns
 touch /Applications/Alacritty.app
 
-# sudo killall Finder && sudo killall Docker
+# Apply
+rm /var/folders/*/*/*/com.apple.dock.iconcache; killall Dock

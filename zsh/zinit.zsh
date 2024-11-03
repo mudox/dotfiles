@@ -20,7 +20,6 @@ zinit light-mode for \
 () {
     local omz_plugins=(
         git
-        git-extras
 
         copypath
         copyfile
@@ -36,6 +35,10 @@ zinit light-mode for \
         zinit snippet "OMZP::${plug}"
     done
 }
+
+# git-extras
+zinit lucid wait'0a' for \
+  as"program" pick"$ZPFX/bin/git-*" src"etc/git-extras-completion.zsh" make"PREFIX=$ZPFX" tj/git-extras
 
 # Load plguins lazily
 () {

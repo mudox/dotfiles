@@ -1,8 +1,3 @@
-import = [
-  "~/.local/share/nvim/lazy/tokyonight.nvim/extras/alacritty/tokyonight_moon.toml" 
-]
-
-shell = "/Users/mudox/.bin/tmux"
 
 [env]
 TERM = "xterm-256color"
@@ -10,7 +5,7 @@ TERM = "xterm-256color"
 [font]
 size = 12.2
 
-normal = { family = "IosevkaTerm Nerd Font Propo" }
+normal = { family = "Iosevka Term", style = "Light" }
 italic = { style = "Oblique" }
 bold = { style = "Medium" }
 bold_italic = { style = "Medium Oblique" }
@@ -81,3 +76,12 @@ bindings = [
 { key = "o",      mods = "Control|Shift", chars = "\u001b[111;6u" },
 { key = "p",      mods = "Control|Shift", chars = "\u001b[112;6u" },
 ]
+
+[general]
+import = [
+  "~/.local/share/nvim/lazy/tokyonight.nvim/extras/alacritty/tokyonight_moon.toml" 
+]
+
+[terminal]
+
+shell = "/Users/mudox/.bin/tmux"

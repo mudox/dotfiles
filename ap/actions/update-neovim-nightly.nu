@@ -37,11 +37,11 @@ ls ~/.bin/nvim-nightly
 
 # link
 log Link
-if ('~/.bin/nvim' | path exists) {
-  ln -vsf $'($install_dir)/bin/nvim' ~/.bin | print $'link: ($in)'
-} else {
-  print 'no link made'
-}
+# if ('~/.bin/nvim' | path exists) {
+ln -vsf $'($install_dir)/bin/nvim' ~/.bin/nvim-n | print $'link: ($in)'
+# } else {
+#   print 'no link made'
+# }
 
 # cleanup
 log Cleanup
