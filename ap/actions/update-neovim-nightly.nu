@@ -7,6 +7,11 @@ def log [msg: string] {
   print $'(ansi yellow)($msg)(ansi reset)'
 }
 
+def version [] {
+  nvim -v | lines | get 0 | inspect 
+  | parse -r 'v(?P<version>\d+\.\d+\.\d+)-dev-(?P<build>\d+)\+(?P<commit>[a-z0-9]+)'
+}
+
 # prepare
 log Prepare
 mkdir ~/.bin/nvim-nightly

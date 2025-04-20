@@ -8,8 +8,10 @@
           "conditions": [
             {
               "bundle_identifiers": [
+                "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.alacritty$",
-                "^com\\.github\\.wez\\.wezterm$"
+                "^com\\.github\\.wez\\.wezterm$",
+                "^com\\.mitchellh\\.ghostty$"
               ],
               "type": "frontmost_application_if"
             }
@@ -33,7 +35,10 @@
           "conditions": [
             {
               "bundle_identifiers": [
-                "^org\\.alacritty$"
+                "^net\\.kovidgoyal\\.kitty$",
+                "^org\\.alacritty$",
+                "^com\\.github\\.wez\\.wezterm$",
+                "^com\\.mitchellh\\.ghostty$"
               ],
               "type": "frontmost_application_if"
             }
@@ -64,7 +69,8 @@
               "bundle_identifiers": [
                 "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.alacritty$",
-                "^com\\.github\\.wez\\.wezterm$"
+                "^com\\.github\\.wez\\.wezterm$",
+                "^com\\.mitchellh\\.ghostty$"
               ],
               "type": "frontmost_application_if"
             }
@@ -88,7 +94,10 @@
           "conditions": [
             {
               "bundle_identifiers": [
-                "^net\\.kovidgoyal\\.kitty$"
+                "^net\\.kovidgoyal\\.kitty$",
+                "^org\\.alacritty$",
+                "^com\\.github\\.wez\\.wezterm$",
+                "^com\\.mitchellh\\.ghostty$"
               ],
               "type": "frontmost_application_if"
             }
@@ -114,7 +123,8 @@
               "bundle_identifiers": [
                 "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.alacritty$",
-                "^com\\.github\\.wez\\.wezterm$"
+                "^com\\.github\\.wez\\.wezterm$",
+                "^com\\.mitchellh\\.ghostty$"
               ],
               "type": "frontmost_application_if"
             }
@@ -140,7 +150,8 @@
               "bundle_identifiers": [
                 "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.alacritty$",
-                "^com\\.github\\.wez\\.wezterm$"
+                "^com\\.github\\.wez\\.wezterm$",
+                "^com\\.mitchellh\\.ghostty$"
               ],
               "type": "frontmost_application_if"
             }
@@ -171,7 +182,8 @@
               "bundle_identifiers": [
                 "^net\\.kovidgoyal\\.kitty$",
                 "^org\\.alacritty$",
-                "^com\\.github\\.wez\\.wezterm$"
+                "^com\\.github\\.wez\\.wezterm$",
+                "^com\\.mitchellh\\.ghostty$"
               ],
               "type": "frontmost_application_if"
             }

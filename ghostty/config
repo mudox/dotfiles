@@ -1,0 +1,12 @@
+quit-after-last-window-closed = true
+
+macos-option-as-alt = true
+
+window-decoration = false
+
+font-family = Iosevka Term
+
+theme = /Users/mudox/.local/share/nvim/lazy/tokyonight.nvim/extras/ghostty/tokyonight_moon
+background-opacity = 0.8
+background-blur-radius = 20
+
