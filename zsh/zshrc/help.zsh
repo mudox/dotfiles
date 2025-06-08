@@ -1,7 +1,7 @@
 # vim: filetype=zsh
 
 # use `nvim` as man pager
-export MANPAGER='MDX_NVIM_MODE=man nvim +Man!'
+export MANPAGER='NVIM_APPNAME=nvim_man nvim +Man!'
 
 # zsh `run-help`
 unalias run-help

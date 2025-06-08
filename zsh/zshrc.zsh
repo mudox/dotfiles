@@ -5,7 +5,11 @@ source "${MDX_DOT_DIR}/zsh/zinit.zsh"
 source "${MDX_DOT_DIR}/zsh/ohmyzsh.zsh"
 source "${MDX_DOT_DIR}/zsh/custom.zsh"
 
-# prompt
+# pnpm
+export PNPM_HOME="/Users/mudox/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+# starship
 eval "$(starship init zsh)"
 
 # path
@@ -36,18 +40,3 @@ path=(
 
   $path
 )
-
-# zoxide
-if [[ -z $DID_INIT_ZOXIDE ]]; then
-  export DID_INIT_ZOXIDE=1
-
-  export _ZO_ECHO=1
-  eval "$(zoxide init zsh)"
-fi
-
-# broot
-# source /Users/mudox/.config/broot/launcher/bash/br
-
-# pnpm
-export PNPM_HOME="/Users/mudox/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"

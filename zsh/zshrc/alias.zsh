@@ -36,10 +36,6 @@ alias te='tuist edit'
 alias ts='tuist scaffold'
 alias tw='tuist cache warm'
 
-# just
-alias j=just
-alias jc='just --choose'
-
 # lua
 alias lr='luarocks'
 

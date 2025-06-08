@@ -84,7 +84,7 @@
     keepBackup       = false
 
 [merge]
-    conflictstyle    = diff3
+    conflictstyle    = zdiff3
     tool             = vscode
 
 [mergetool "vscode"]
