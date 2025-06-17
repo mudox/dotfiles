@@ -1,2 +1,4 @@
 /karabiner/automatic_backups/
 /nushell/history.txt
+.zsh_plugins.txt
+.zsh_history

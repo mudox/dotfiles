@@ -1,7 +1,14 @@
+# vim: fml& fdn& fdm=marker fmr=〈,〉
+
+# Locale
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
+
 # Proxy
 source "${HOME}/.config/proxy"
 
-# Global environments
+# MDX_XXX_DIR's 〈
+
 : ${MDX_GIT_DIR:="${HOME}/Git"}
 export -r MDX_GIT_DIR
 
@@ -20,9 +27,7 @@ export -r MDX_HS_DIR
 : ${MDX_DEV_DIR:="${HOME}/Develop"}
 export MDX_DEV_DIR
 
-# Locale
-export LC_ALL='en_US.UTF-8'
-export LANG='en_US.UTF-8'
+# MDX_XXX_DIR's 〉
 
 # XDG
 export XDG_CONFIG_HOME="${HOME}/.config"
@@ -34,7 +39,10 @@ source "$HOME/.cargo/env"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Python
-source "${MDX_DOT_DIR}/zsh/zshenv/python.zsh"
+if [[ -z $PYENV_ROOT ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  eval "$(pyenv init -)"
+fi
 
 # Java
 # export JAVA_HOME="$(/usr/libexec/java_home)"

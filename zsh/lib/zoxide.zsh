@@ -2,11 +2,6 @@ if [[ ! -o interactive ]]; then
   return
 fi
 
-if [[ -n $DID_INIT_ZOXIDE ]]; then
-  return
-fi
-export DID_INIT_ZOXIDE=1
-
 export _ZO_ECHO=1
 eval "$(zoxide init --cmd j zsh)"
 

@@ -6,6 +6,14 @@ fi
 
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="
+--prompt 'Files> '
+--header 'CTRL-T: Switch between Files/Directories'
+--bind 'ctrl-t:transform:[[ ! \$FZF_PROMPT =~ Files ]] &&
+    echo \"change-prompt(Files> )+reload(fd --type file)\" ||
+    echo \"change-prompt(Directories> )+reload(fd --type directory)\"'
+ --preview '[[ \$FZF_PROMPT =~ Files ]] && bat --color=always {} || eza --tree --only-dirs --color=always --icons {}'
+"
 
 export FZF_DEFAULT_OPTS=''
 # search
@@ -15,12 +23,9 @@ FZF_DEFAULT_OPTS+='
 '
 # ui
 FZF_DEFAULT_OPTS+='
---height=~50%
---min-height=5
+--height=~50% --min-height=5
 --layout=reverse
 --info=inline
-# --prompt=" "
-# --pointer=┃
 --border=none --margin=1 --padding=1
 --no-scrollbar
 '
