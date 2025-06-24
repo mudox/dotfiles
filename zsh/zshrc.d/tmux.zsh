@@ -23,8 +23,3 @@ tkss() {
   after="$(tl)"
   BAT_STYLE='plain' batdiff <(echo "$before") <(echo "$after")
 }
-
-# Key bindings
-bindkey -r '^L'
-bindkey -r '^[^L'
-bindkey '^[l' clear-screen

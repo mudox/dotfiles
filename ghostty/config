@@ -1,3 +1,5 @@
+command = zsh
+
 quit-after-last-window-closed = true
 
 macos-option-as-alt = true

@@ -3,7 +3,7 @@ if [[ ! -o interactive ]]; then
 fi
 
 export _ZO_ECHO=1
-eval "$(zoxide init --cmd j zsh)"
+eval "$(zoxide init zsh)"
 
 # alt+j to jump by zoxide
 _zi_widget() {

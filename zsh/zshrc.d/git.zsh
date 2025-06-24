@@ -10,6 +10,8 @@ alias gllg='gl && lgoh'
 git config --global core.editor nvim
 
 # gh
-
 alias ghb='gh browse'
 alias ghrw='gh run watch'
+
+# git-extras
+source /opt/homebrew/opt/git-extras/share/git-extras/git-extras-completion.zsh

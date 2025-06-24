@@ -49,3 +49,7 @@ zle-line-init() {
   zle -K viins
 }
 zle -N zle-line-init
+
+bindkey -r '^L' # leave to tmux-navigation
+bindkey -r '^[^L'
+bindkey '^[l' clear-screen

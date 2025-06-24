@@ -1,0 +1,25 @@
+# vi-mode
+# jeffreytse/zsh-vi-mode
+
+# oh-my-zsh
+getantidote/use-omz
+ohmyzsh/ohmyzsh path:lib
+
+# completion
+mattmc3/ez-compinit
+Aloxaf/fzf-tab
+
+# zsh
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
+zdharma-continuum/fast-syntax-highlighting
+djui/alias-tips
+trapd00r/LS_COLORS
+
+# git
+ohmyzsh/ohmyzsh path:plugins/git
+wfxr/forgit
+# git-extras installed by homebrew
+
+# misc
+ohmyzsh/ohmyzsh path:plugins/brew

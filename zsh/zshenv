@@ -1,11 +1,18 @@
 # vim: fml& fdn& fdm=marker fmr=〈,〉
 
+# NOTE:
+# /etc/zshrc
+# export ZDOTDIR=${HOME}/.dotfiles/zsh
+
 # Locale
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 
 # Proxy
 source "${HOME}/.config/proxy"
+
+# XDG
+export XDG_CONFIG_HOME="${HOME}/.config"
 
 # MDX_XXX_DIR's 〈
 
@@ -29,26 +36,20 @@ export MDX_DEV_DIR
 
 # MDX_XXX_DIR's 〉
 
-# XDG
-export XDG_CONFIG_HOME="${HOME}/.config"
+source "$MDX_DOT_DIR/zsh/.env.local"
 
-# Cargo
-source "$HOME/.cargo/env"
+typeset -U fpath
+typeset -U path
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+path=(/usr/local/bin $path)
 
-# Python
-if [[ -z $PYENV_ROOT ]]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  eval "$(pyenv init -)"
-fi
+# Mise
+eval "$(mise activate zsh --shims)"
 
-# Java
-# export JAVA_HOME="$(/usr/libexec/java_home)"
-
-# `fpath`
-typeset -U fpath
+# Cargo
+source "$HOME/.cargo/env"
 
 # Neovim
 export EDITOR=nvim
@@ -56,22 +57,14 @@ export EDITOR=nvim
 # Rust
 export RUST_BACKTRACE=1
 
-# `path`
-typeset -U path
+# CangJie
+source ~/Downloads/cangjie/envsetup.sh
+
 path=(
-  # my
   ~/.bin
-  ~/.bin/*(/)
+  ~/.bin/project
 
-  # shims
-  ~/.rbenv/shims            # rbenv
-  ~/.pyenv/shims            # pyenv
-  ~/.local/share/mise/shims # mise
-
-  ~/.cargo/bin # cargo
-
-  ~/.local/bin   # pipx likes to put installed binaries here
-  /usr/local/bin # macOS applications like to put commands here
+  ~/.local/bin
 
   $path
 )

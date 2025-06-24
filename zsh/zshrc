@@ -2,16 +2,20 @@
 
 [[ -n $PROFILE_ZSH ]] && zmodload zsh/zprof
 
+setopt EXTENDED_GLOB
+
 # OMZ
 DISABLE_AUTO_UPDATE="true"
 HYPHEN_INSENSITIVE="true"
-DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true" # use plugin
 DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="true"
 
 # Antidote 〈
 
 antidote=/opt/homebrew/opt/antidote/share/antidote
+
+zstyle ':antidote:bundle' use-friendly-names 'yes'
 
 # Set the root name of the plugins files (.txt and .zsh) antidote will use.
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
@@ -34,7 +38,7 @@ source ${zsh_plugins}.zsh
 # Antidote 〉
 
 # Custom
-for f in "${MDX_DOT_DIR}/zsh/lib"/*.zsh; do
+for f in "${MDX_DOT_DIR}/zsh/zshrc.d"/*.zsh; do
   source $f
 done
 
