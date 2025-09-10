@@ -1,0 +1,16 @@
+[tools]
+direnv = "latest"
+node = "latest"
+pnpm = "latest"
+python = "latest"
+ruby = "latest"
+rust = "latest"
+swift = "latest"
+tuist = "latest"
+usage = "latest"
+uv = "latest"
+watchexec = "latest"
+
+[settings]
+experimental = true
+idiomatic_version_file_enable_tools = ["rust"]

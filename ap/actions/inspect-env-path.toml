@@ -1,6 +1,0 @@
-icon = "􀀶 "
-
-# required
-title = "Zsh: inspect `$path`"
-
-description = "Print `$path` with common path colorized"

@@ -40,6 +40,26 @@ alias tw='tuist cache warm'
 alias lr='luarocks'
 
 # neovim
-alias vim=nvim
 alias v=nvim
-alias rv='nvr -l'
+alias e=nvim
+
+# mise
+alias m='mise'
+alias u='mise use'
+alias x='mise exec --'
+
+alias r='mise run'
+alias mx='mise run run-task'
+
+alias mt='mise tasks'
+
+alias mw='mise watch'
+alias R='mise watch'
+
+alias ml='mise ls'
+alias mll='mise ls --local'
+alias mlg='mise ls --global'
+alias mlr='mise ls-remote'
+
+alias mo='mise outdated'
+alias mO='mise outdated --bump'

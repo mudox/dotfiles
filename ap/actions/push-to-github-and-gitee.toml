@@ -1,6 +1,0 @@
-icon = "􀂡 "
-
-# required
-title = "Git: push current repo to github & gitee"
-
-description = "Open repo page in browser after pushing if confirmed"

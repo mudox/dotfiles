@@ -1,5 +1,0 @@
-icon = '􀂻 '
-
-title = 'Tmux: change tmux color theme'
-
-description = 'Alias `tt`, by `tmux source`ing tmuxline files under `~/.tmux/tmuxline-files`'

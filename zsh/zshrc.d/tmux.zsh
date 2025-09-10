@@ -14,12 +14,19 @@ tksv() {
 }
 
 tl() {
-  tmux list-panes -a -F '#S:#W.#P with #{pane_current_command}'
-}
-
-tkss() {
-  before="$(tl)"
-  tmux kill-session -t "$@"
-  after="$(tl)"
-  BAT_STYLE='plain' batdiff <(echo "$before") <(echo "$after")
+  tmux list-panes -a -F '#S:#W:#{pane_current_command}' | (
+    local -A sessions windows
+    while IFS=':' read -r session window cmd; do
+      if [[ -z $sessions[$session] ]]; then
+        echo "$session"
+        sessions[$session]=1
+        windows=()
+      fi
+      if [[ -z $windows[$window] ]]; then
+        echo "   $window"
+        windows[$window]=1
+      fi
+      echo "      󰞷  $cmd"
+    done
+  )
 }

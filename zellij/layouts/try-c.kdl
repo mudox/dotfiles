@@ -1,0 +1,22 @@
+layout {
+  default_tab_template {
+    pane size=1 borderless=true {
+      plugin location="tab-bar"
+    }
+    children
+    pane size=1 borderless=true {
+      plugin location="status-bar"
+    }
+  }
+
+  tab name="try c" split_direction="vertical" cwd="~/Develop/C/try-c" {
+    pane name="edit" command="nvim" {
+      args "main.c"
+    }
+
+    pane name="run" {
+      command "watchexec"
+      args "-rc" "-f" "main.c" "--" "gcc main.c -o try-c; ./try-c"
+    }
+  }
+}

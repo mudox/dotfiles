@@ -28,6 +28,7 @@ FZF_DEFAULT_OPTS+='
 --info=inline
 --border=none --margin=1 --padding=1
 --no-scrollbar
+--preview-window=border:border-none
 '
 # key
 FZF_DEFAULT_OPTS+='

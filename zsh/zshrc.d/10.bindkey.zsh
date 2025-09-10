@@ -50,6 +50,11 @@ zle-line-init() {
 }
 zle -N zle-line-init
 
+bindkey -r '^C'
+bindkey -r '^F'
+bindkey -r '^O'
+bindkey -r '^S'
+
 bindkey -r '^L' # leave to tmux-navigation
 bindkey -r '^[^L'
 bindkey '^[l' clear-screen

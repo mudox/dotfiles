@@ -17,7 +17,7 @@ let carapace = {|spans: list<string>|
 let completer = {|spans|
   let expanded_alias = scope aliases
   | where name == $spans.0
-  | get -i 0.expansion
+  | get -o 0.expansion
 
   let spans = if $expanded_alias != null {
     $spans

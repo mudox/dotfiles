@@ -14,7 +14,7 @@ builtin_box_drawing = true
 [window]
 decorations = "None"
 
-padding = { x = 3, y = 0 }
+padding = { x = 4, y = 3 }
 dynamic_padding = true
 
 opacity = 0.95
@@ -31,6 +31,16 @@ option_as_alt = "Both"
 
 [keyboard]
 bindings = [
+
+  # remove default bindings
+  { key = "n", mods = "Super", action = "ReceiveChar" },
+
+  { key = "h", mods = "Super", action = "ReceiveChar" }, # ISSUE: not work
+  { key = "m", mods = "Super", action = "ReceiveChar" },
+
+  { key = "-", mods = "Super", action = "ReceiveChar" },
+  { key = "=", mods = "Super", action = "ReceiveChar" },
+
   # Key combos
 
   # - https://www.youtube.com/watch?v=lHBD6pdJ-Ng
@@ -71,6 +81,10 @@ bindings = [
   { key = "l",      mods = "Control|Shift", chars = "\u001b[76;6u"  },
   { key = "o",      mods = "Control|Shift", chars = "\u001b[111;6u" },
   { key = "p",      mods = "Control|Shift", chars = "\u001b[112;6u" },
+  { key = "v",      mods = "Control|Shift", action = "Paste"        },
+
+  # alt
+  { key = ".",      mods = "Alt",           chars = "\u001b[46;3u"  },
 ]
 
 [general]
@@ -78,5 +92,7 @@ import = [
   "~/.local/share/nvim/lazy/tokyonight.nvim/extras/alacritty/tokyonight_night.toml",
 ]
 
-[terminal]
-shell = "/Users/mudox/.bin/tmux"
+[terminal.shell]
+program = "zsh"
+# args = ["--login", "-c", "zellij"]
+# args = ["--login"]

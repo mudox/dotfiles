@@ -1,4 +1,6 @@
-# colors
+# vim: fml& fdn& fdm=marker fmr=〈,〉
+
+# colors 〈
 
 let bg             = "#1a1b26"
 let bg_dark        = "#16161e"
@@ -99,7 +101,9 @@ let colors = {
 
 $env.config.color_config = $colors
 
-# menus
+# colors 〉
+
+# menu 〈
 
 let menu_style = {
   text:             $blue
@@ -107,11 +111,11 @@ let menu_style = {
   description_text: $comment
 }
 
-$env.config.menus = [
+$env.config.menus ++= [
   {
     name: completion_menu
     only_buffer_difference: false
-    marker: "󰍻  "
+    marker: "  "
     type: {
       layout: columnar
       columns: 4
@@ -149,8 +153,8 @@ $env.config.menus = [
   }
   {
     name: history_menu
-    only_buffer_difference: true
-    marker: "  "
+    only_buffer_difference: false
+    marker: "󰚭 "
     type: {
       layout: list
       page_size: 10
@@ -160,7 +164,7 @@ $env.config.menus = [
   {
     name: help_menu
     only_buffer_difference: true
-    marker: "󰋖 "
+    marker: "󰚵 "
     type: {
       layout: description
       columns: 4
@@ -225,17 +229,19 @@ $env.config.menus = [
   }
 ]
 
-
-# prompt
-use ~/.cache/starship/init.nu
-load-env {
-  PROMPT_INDICATOR_VI_INSERT: ''
-  PROMPT_INDICATOR_VI_NORMAL: ''
-}
+# menu 〉
 
 # cursor
 $env.config.cursor_shape = {
   vi_insert: line
   vi_normal: block
   emacs: line
+}
+
+# prompt
+starship init nu | save -f ($nu.user-autoload-dirs | path join 'starship.nu')
+load-env {
+  PROMPT_INDICATOR: ''
+  PROMPT_INDICATOR_VI_INSERT: ''
+  PROMPT_INDICATOR_VI_NORMAL: ''
 }

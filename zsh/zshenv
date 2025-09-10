@@ -1,7 +1,7 @@
 # vim: fml& fdn& fdm=marker fmr=〈,〉
 
 # NOTE:
-# /etc/zshrc
+# edit /etc/zshrc
 # export ZDOTDIR=${HOME}/.dotfiles/zsh
 
 # Locale
@@ -48,9 +48,6 @@ path=(/usr/local/bin $path)
 # Mise
 eval "$(mise activate zsh --shims)"
 
-# Cargo
-source "$HOME/.cargo/env"
-
 # Neovim
 export EDITOR=nvim
 
@@ -58,7 +55,7 @@ export EDITOR=nvim
 export RUST_BACKTRACE=1
 
 # CangJie
-source ~/Downloads/cangjie/envsetup.sh
+source ~/Develop/CangJie/lts/envsetup.sh
 
 path=(
   ~/.bin

@@ -1,6 +1,6 @@
-$env.config.edit_mode = 'emacs'
+$env.config.edit_mode = 'vi'
 
-$env.config.keybindings = [
+$env.config.keybindings ++= [
   # clear screen
   {
     name: clear_screen
@@ -13,25 +13,23 @@ $env.config.keybindings = [
     name: clear_screen
     modifier: alt
     keycode: char_l
-    mode: [emacs, vi_normal, vi_insert]
+    mode: [emacs, vi_insert]
     event: { send: clearscreen }
   }
-
-  # not work
-  {
-    name: stong_reset
-    modifier: control_shift
-    keycode: char_l
-    mode: [emacs, vi_normal, vi_insert]
-    event: { send: clearscreen }
-  }
-
   # help
   {
     name: help_menu
     modifier: alt
     keycode: char_h
-    mode: [emacs, vi_insert, vi_normal]
+    mode: [emacs, vi_insert]
     event: { send: menu name: help_menu }
+  }
+  # kill line
+  {
+      name: clear_line
+      modifier: control
+      keycode: char_u
+      mode: [emacs, vi_insert]
+      event: { edit: clear }
   }
 ]

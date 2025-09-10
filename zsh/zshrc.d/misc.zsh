@@ -31,16 +31,6 @@ setopt ignore_eof
 
 bindkey '\eq' push-line-or-edit
 
-# insert a empty line bwteen prompt and output
-_line_padding() {
-  # remove decoracting empty lines in neovim intgrated terminal
-  if [[ -z $VIMRUNTIME ]]; then
-    print
-  fi
-}
-add-zsh-hook precmd _line_padding
-add-zsh-hook preexec _line_padding
-
 # ast-grep
 eval "$(ast-grep completions)"
 

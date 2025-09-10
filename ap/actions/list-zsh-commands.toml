@@ -1,6 +1,0 @@
-icon = "􀀶 "
-
-# required
-title = "Zsh: list all commands"
-
-description = "This only reflect sub-shell running in non-interactive mode"
